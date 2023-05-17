@@ -12,8 +12,9 @@ def crawl_list_news(link):
     soup = BeautifulSoup(raw_data.text, 'html.parser')
     article_list = soup.find_all("article")
     for article in article_list:
-        print(article.find("a", href=True)['href'])
-        # print(requests.get(article.find("a", href=True)['href']).text)
-        # break
+        try:
+            print(article.find("a", href=True)['href'])
+        except:
+            continue
 
-crawl_list_news('https://hanoi.fpt.edu.vn/360-do-hoa-lac')
+# crawl_list_news('https://vnexpress.net/chu-de/dai-hoc-fpt-2161')
