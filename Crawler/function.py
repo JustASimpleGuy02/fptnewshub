@@ -45,9 +45,9 @@ def crawl_news_text(link_news):
         if len(paragraph.find_all()) == 0:
             result.append(paragraph.text)
     
-    return ''.join(result)
+    return ' '.join(result)
 
 # print(crawl_list_news('https://vnexpress.net/chu-de/dai-hoc-fpt-2161'))
 # print(crawl_news_text('https://vnexpress.net/tiet-kiem-hang-tram-trieu-hoc-phi-nho-hoc-bong-mba-4606366.html'))
-# crawl_news_text('https://hanoi.fpt.edu.vn/cuu-sinh-vien-dai-hoc-fpt-gianh-hoc-bong-tien-si-tai-phap.html')
-# crawl_news_text('https://hanoi.fpt.edu.vn/doc-dao-do-an-thiet-ke-bo-nhan-dien-thuong-hieu-cho-lien-doan-xiec-viet-nam-cua-sinh-vien-dai-hoc-fpt.html')
+# print(crawl_news_text('https://hanoi.fpt.edu.vn/cuu-sinh-vien-dai-hoc-fpt-gianh-hoc-bong-tien-si-tai-phap.html'))
+# print(crawl_news_text('https://hanoi.fpt.edu.vn/doc-dao-do-an-thiet-ke-bo-nhan-dien-thuong-hieu-cho-lien-doan-xiec-viet-nam-cua-sinh-vien-dai-hoc-fpt.html'))
