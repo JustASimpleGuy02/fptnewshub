@@ -1,0 +1,7 @@
+beautifulsoup4
+justext
+pandas
+tqdm
+icecream
+numpy
+scrapy

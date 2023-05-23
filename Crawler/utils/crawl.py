@@ -1,4 +1,18 @@
+from bs4 import BeautifulSoup, SoupStrainer
+import requests
+from typing import List
+import requests
+import justext
+
 def read_list_webs(file_path: str):
+    """Read list of webs from a text file
+
+    Args:
+        file_path (str): path to txt file
+
+    Returns:
+        List: list of urls
+    """
     list_webs = []
     with open(file_path, 'r') as f:
         for line in f:
@@ -8,9 +22,15 @@ def read_list_webs(file_path: str):
 
 # return a list of news' link from a webpage
 def crawl_list_news(link, page_limit=20):
-    from bs4 import BeautifulSoup, SoupStrainer
-    import requests
+    """Return a list of news' link from a webpage
 
+    Args:
+        link (str): link to the page
+        page_limit (int, optional): max number of pages to crawl. Defaults to 20.
+
+    Returns:
+        List: list of page urls
+    """
     result = []
     page = 1
     use_page_format = True  # Start with the /page/ format
@@ -46,11 +66,17 @@ def crawl_list_news(link, page_limit=20):
     return result
 
 
-# return text from a news page
+# Get text from a news page
 def crawl_news_text(link_news, language = "Vietnamese"):
-    import requests
-    import justext
-    
+    """Get text from a news page
+
+    Args:
+        link_news (str): link to news page
+        language (str, optional): _description_. Defaults to "Vietnamese".
+
+    Returns:
+        str: full text of page
+    """
     result = []
     response = requests.get(link_news)    
     paragraphs = justext.justext(response.content, justext.get_stoplist(language))
@@ -59,5 +85,7 @@ def crawl_news_text(link_news, language = "Vietnamese"):
             result.append(paragraph.text)
     return '\n'.join(result)
 
-# print(crawl_list_news('https://vnexpress.net/chu-de/dai-hoc-fpt-2161'))
-# print(crawl_news_text('https://vnexpress.net/tiet-kiem-hang-tram-trieu-hoc-phi-nho-hoc-bong-mba-4606366.html'))
+
+if __name__ == '__main__':
+    # print(crawl_list_news('https://vnexpress.net/chu-de/dai-hoc-fpt-2161'))
+    print(crawl_news_text('https://vnexpress.net/tiet-kiem-hang-tram-trieu-hoc-phi-nho-hoc-bong-mba-4606366.html'))
