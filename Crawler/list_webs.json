@@ -1,0 +1,304 @@
+[
+    {
+        "path": "https://hanoi.fpt.edu.vn/tin-tuc",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/page/",
+            "postfix": "",
+            "tag": "article"
+        },
+        "status": true
+    },
+    {
+        "path": "https://daihoc.fpt.edu.vn/tin-tuc",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/page/",
+            "postfix": "",
+            "tag": "article"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vnexpress.net/chu-de/dai-hoc-fpt-2161",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "-p",
+            "postfix": "",
+            "tag": "article"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baomoi.com/tim-kiem/%C4%91%E1%BA%A1i-h%E1%BB%8Dc-fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/trang",
+            "postfix": ".epi",
+            "attr": [
+                "bm_ML bm_m",
+                "bm_H"
+            ],
+            "result_domain": "https://baomoi.com/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baomoi.com/tim-kiem/%C4%91h-fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/trang",
+            "postfix": ".epi",
+            "attr": [
+                "bm_ML bm_m",
+                "bm_H"
+            ],
+            "result_domain": "https://baomoi.com/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://zingnews.vn/%C4%91%E1%BA%A1i-h%E1%BB%8Dc-fpt-tim-kiem",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/trang",
+            "postfix": ".html?content_type=-4",
+            "attr": [
+                "article-list listing-layout responsive infinite-load",
+                "article-title"
+            ],
+            "result_domain": "https://zingnews.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vietnamnet.vn/tim-kiem",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "-p",
+            "postfix": "?q=\u0111\u1ea1i+h\u1ecdc+fpt&od=2&bydaterang=all&newstype=all",
+            "attr": "horizontalPost__avt avt-240",
+            "start_from_page": 0
+        },
+        "status": true
+    },
+    {
+        "path": "https://vietnamnet.vn/tim-kiem",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "-p",
+            "postfix": "?q=\u0110H%20FPT&od=2&bydaterang=all&newstype=all",
+            "attr": "horizontalPost__avt avt-240",
+            "start_from_page": 0
+        },
+        "status": true
+    },
+    {
+        "path": "https://chungta.vn/search.html?q=%C4%91%E1%BA%A1i+h%E1%BB%8Dc+fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&page=",
+            "postfix": "",
+            "tag": "article",
+            "result_domain": "https://chungta.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://chungta.vn/search.html?q=%C4%91h+fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&page=",
+            "postfix": "",
+            "tag": "article",
+            "result_domain": "https://chungta.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://chungta.vn/search.html?q=sinh+vi%C3%AAn+fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&page=",
+            "postfix": "",
+            "tag": "article",
+            "result_domain": "https://chungta.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://dantri.com.vn/tim-kiem/%C4%91%E1%BA%A1i+h%E1%BB%8Dc+fpt.htm?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pi=",
+            "postfix": "",
+            "attr": [
+                "article list",
+                "article-title"
+            ],
+            "result_domain": "https://dantri.com.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://daibieunhandan.vn/Search/%22%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt%22",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?p=",
+            "postfix": "",
+            "tag": "article",
+            "result_domain": "https://daibieunhandan.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://daibieunhandan.vn/Search/%22%C4%91h%20fpt%22",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?p=",
+            "postfix": "",
+            "tag": "article",
+            "result_domain": "https://daibieunhandan.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tiin.vn/search.html?q=%C4%90%E1%BA%A0I%20H%E1%BB%8CC%20FPT",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "",
+            "postfix": "",
+            "attr": "row item-has-tag",
+            "start_from_page": -1
+        },
+        "status": true
+    },
+    {
+        "path": "https://tiin.vn/search.html?q=%C4%91h%20FPT",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "",
+            "postfix": "",
+            "attr": "row item-has-tag",
+            "start_from_page": -1
+        },
+        "status": true
+    },
+    {
+        "path": "https://giaoduc.net.vn/tim-kiem/?q=%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20FPT",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&page=",
+            "postfix": "",
+            "attr": [
+                "timeline content-list",
+                "story"
+            ]
+        },
+        "status": true
+    },
+    {
+        "path": "https://plo.vn/tim-kiem/?q=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&page=",
+            "postfix": "",
+            "attr": [
+                "box-style-12 content-list",
+                "story__heading"
+            ]
+        },
+        "status": true
+    },
+    {
+        "path": "https://plo.vn/tim-kiem/?q=%C4%91h%20fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&page=",
+            "postfix": "",
+            "attr": [
+                "box-style-12 content-list",
+                "story__heading"
+            ]
+        },
+        "status": true
+    },
+    {
+        "path": "https://baoxaydung.com.vn/search_enginer.html?p=search&q=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "",
+            "postfix": "",
+            "attr": [
+                "stream search-list list-news list-vt img-float img-left bordered-bottom __MB_LIST_ITEM",
+                "box-title"
+            ],
+            "result_domain": "https://baoxaydung.com.vn/",
+            "start_from_page": -1
+        },
+        "status": true
+    },
+    {
+        "path": "https://danviet.vn/tim-kiem.htm?search=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&pageindex=",
+            "postfix": "",
+            "attr": [
+                "list-news",
+                "title-box"
+            ],
+            "stop_at_page": 2,
+            "result_domain": "https://danviet.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://danviet.vn/tim-kiem.htm?search=%C4%91h%20fpt",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&pageindex=",
+            "postfix": "",
+            "attr": [
+                "list-news",
+                "title-box"
+            ],
+            "stop_at_page": 1,
+            "result_domain": "https://danviet.vn"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kienthuc.net.vn/search/xJHhuqFpIGjhu41jIGZwdA==/dai-hoc-fpt.html",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?page=",
+            "postfix": "",
+            "attr": [
+                "cat-listnews hzol-clear",
+                "story clearfix"
+            ],
+            "result_domain": "https://kienthuc.net.vn/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kienthuc.net.vn/search/xJFoIGZwdA==/dh-fpt.html",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?page=",
+            "postfix": "",
+            "attr": [
+                "cat-listnews hzol-clear",
+                "story clearfix"
+            ],
+            "result_domain": "https://kienthuc.net.vn/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://nld.com.vn/tim-kiem.htm?keywords=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
+        "type_crawl": 2,
+        "status": false
+    }
+]
