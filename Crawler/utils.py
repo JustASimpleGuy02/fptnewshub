@@ -34,17 +34,25 @@ def crawl_list_news(link, tag = None, attr = None, domain = ""):
     return list(set(list_link))
 
 # return text from a news page
-def crawl_news_text(link_news, language = "Vietnamese"):
+def crawl_news_text(link_news, language = "Vietnamese",
+                    time_tag = None):
     import requests
     import justext
+    from bs4 import BeautifulSoup
     
     result = []
     response = requests.get(link_news)    
+    soup = BeautifulSoup(response.text, "html.parser")
+    try:
+        title_tag = soup.find("h1")
+        title = title_tag.text
+    except:
+        title = ""
     paragraphs = justext.justext(response.content, justext.get_stoplist(language))
     for paragraph in paragraphs:
         if not paragraph.is_boilerplate:
             result.append(paragraph.text)
-    return '\n'.join(result)
+    return title, '\n'.join(result)
 
 # print(crawl_list_news("https://uni.fpt.edu.vn/tin-tuc-su-kien/tin-tieu-diem?pagenumber=1", attr="news-item-wrapper"))
 # print(len(crawl_list_news(
@@ -53,3 +61,4 @@ def crawl_news_text(link_news, language = "Vietnamese"):
 #     attr=["cat-listnews hzol-clear", "story clearfix"],
 #     domain="https://kienthuc.net.vn/"
 # )))
+# crawl_news_text("https://hanoi.fpt.edu.vn/mua-he-ruc-ro-chuong-trinh-tieng-anh-chuyen-sau-level-6-tai-philippines-va-malaysia.html")
