@@ -43,5 +43,8 @@
     },
     "https://kienthuc.net.vn/": {
         "tag": "time"
+    },
+    "https://caodang.fpt.edu.vn": {
+        "attr": "date"
     }
 }

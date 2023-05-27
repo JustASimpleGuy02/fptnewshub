@@ -45,7 +45,10 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     from bs4 import BeautifulSoup
     
     result = []
-    response = requests.get(link_news)    
+    headers = {
+         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+    }
+    response = requests.get(link_news, headers=headers)    
     soup = BeautifulSoup(response.text, "html.parser")
     try:
         title_tag = soup.find("h1")
@@ -60,13 +63,19 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
                 try:
                     time = time_tag["datetime"]
                 except:
-                    time = time_tag.text
+                    try:
+                        time = time_tag.text
+                    except:
+                        time = ""
             else:
                 time_tag = soup.find(attrs=time_tag_attr["attr"])
                 try:
                     time = time_tag["datetime"]
                 except:
-                    time = time_tag.text
+                    try:
+                        time = time_tag.text
+                    except:
+                        time = ""
             break
     paragraphs = justext.justext(response.content, justext.get_stoplist(language))
     for paragraph in paragraphs:
@@ -74,11 +83,13 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
             result.append(paragraph.text)
     return title, time, '\n'.join(result)
 
-# print(crawl_list_news("https://uni.fpt.edu.vn/tin-tuc-su-kien/tin-tieu-diem?pagenumber=1", 
-#                       attr="news-item-wrapper"))
-print((crawl_list_news(
-    link="https://fpt.com.vn/vi/tin-tuc/page/1",
-    tag=None,
-    attr="news-card-meta",
-    domain="https://fpt.com.vn/"
-)))
+# print((crawl_list_news(
+#     link="https://fsb.edu.vn/tin-fsb-e252.html",
+#     tag=None,
+#     attr="col-xs-12 col-sm-12 col-md-12 col-lg-12 list_blog_txt",
+#     domain=""
+# )))
+
+# import json
+# print(crawl_news_text("https://chungta.vn/nguoi-fpt/vong-tranh-tai-top-50-fpt-under-35-thay-doi-the-thuc-1136839.html",
+#                       domain_time_map=json.load(open("domain_time_map.json")))[1])

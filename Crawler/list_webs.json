@@ -347,15 +347,15 @@
         "status": true
     },
     {
-        "path": "https://fpt.com.vn/vi/tin-tuc",
+        "path": "https://fpt.edu.vn/tin-tuc",
         "type_crawl": 1,
         "info": {
-            "prefix": "/page/",
+            "prefix": "?page=",
             "postfix": "",
-            "attr": "col-12 col-md-6 col-lg-4",
-            "result_domain": "https://fpt.com.vn/"
+            "attr": "media-heading verticle fe-title-color",
+            "result_domain": "https://fpt.edu.vn"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://nld.com.vn/tim-kiem.htm?keywords=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
