@@ -81,7 +81,10 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     headers = {
          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
     }
-    response = requests.get(link_news, headers=headers)    
+    try:
+        response = requests.get(link_news, headers=headers)    
+    except:
+        return "", "", ""
     soup = BeautifulSoup(response.text, "html.parser")
     try:
         title_tag = soup.find("h1")
@@ -111,10 +114,13 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
                     except:
                         time = ""
             break
-    paragraphs = justext.justext(response.content, justext.get_stoplist(language))
-    for paragraph in paragraphs:
-        if not paragraph.is_boilerplate:
-            result.append(paragraph.text)
+    try:
+        paragraphs = justext.justext(response.content, justext.get_stoplist(language))
+        for paragraph in paragraphs:
+            if not paragraph.is_boilerplate:
+                result.append(paragraph.text)
+    except:
+        result = [""]
     return title, time, '\n'.join(result)
 
 # print((crawl_list_news(
