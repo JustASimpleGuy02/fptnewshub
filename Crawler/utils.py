@@ -4,7 +4,11 @@ def crawl_list_news(link, tag = None, attr = None, domain = ""):
     import requests
     
     list_link = []
-    response = requests.get(link)
+    headers = {
+         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+    }
+    response = requests.get(link, headers=headers)
+    # print(response.text)
     soup = BeautifulSoup(response.text, 'html.parser')
     # print(soup)
     try:
@@ -70,10 +74,11 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
             result.append(paragraph.text)
     return title, time, '\n'.join(result)
 
-# print(crawl_list_news("https://uni.fpt.edu.vn/tin-tuc-su-kien/tin-tieu-diem?pagenumber=1", attr="news-item-wrapper"))
-# print(len(crawl_list_news(
-#     link="https://kienthuc.net.vn/search/xJHhuqFpIGjhu41jIGZwdA==/dai-hoc-fpt.html?page=2",
-#     tag="",
-#     attr=["cat-listnews hzol-clear", "story clearfix"],
-#     domain="https://kienthuc.net.vn/"
-# )))
+# print(crawl_list_news("https://uni.fpt.edu.vn/tin-tuc-su-kien/tin-tieu-diem?pagenumber=1", 
+#                       attr="news-item-wrapper"))
+print((crawl_list_news(
+    link="https://fpt.com.vn/vi/tin-tuc/page/1",
+    tag=None,
+    attr="news-card-meta",
+    domain="https://fpt.com.vn/"
+)))

@@ -297,6 +297,67 @@
         "status": true
     },
     {
+        "path": "https://caodang.fpt.edu.vn/category/tin-tuc-poly",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/page/",
+            "postfix": "",
+            "attr": "entry-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://uni.fpt.edu.vn/tin-tuc-su-kien/tin-tieu-diem",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?pagenumber=",
+            "postfix": "",
+            "attr": "news-item-wrapper"
+        },
+        "status": true
+    },
+    {
+        "path": "https://uni.fpt.edu.vn/tin-tuc-su-kien/hoi-nhap-quoc-te",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?pagenumber=",
+            "postfix": "",
+            "attr": "news-item-wrapper"
+        },
+        "status": true
+    },
+    {
+        "path": "https://uni.fpt.edu.vn/tin-tuc-su-kien/cau-chuyen-truong-f",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?pagenumber=",
+            "postfix": "",
+            "attr": "news-item-wrapper"
+        },
+        "status": true
+    },
+    {
+        "path": "https://uni.fpt.edu.vn/tin-tuc-su-kien/fpt-hitech",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "?pagenumber=",
+            "postfix": "",
+            "attr": "news-item-wrapper"
+        },
+        "status": true
+    },
+    {
+        "path": "https://fpt.com.vn/vi/tin-tuc",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "/page/",
+            "postfix": "",
+            "attr": "col-12 col-md-6 col-lg-4",
+            "result_domain": "https://fpt.com.vn/"
+        },
+        "status": false
+    },
+    {
         "path": "https://nld.com.vn/tim-kiem.htm?keywords=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
         "type_crawl": 2,
         "status": false
