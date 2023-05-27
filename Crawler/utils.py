@@ -34,8 +34,8 @@ def crawl_list_news(link, tag = None, attr = None, domain = ""):
     return list(set(list_link))
 
 # return text from a news page
-def crawl_news_text(link_news, language = "Vietnamese",
-                    time_tag = None):
+def crawl_news_text(link_news: str, domain_time_map: dict,
+                    language = "Vietnamese"):
     import requests
     import justext
     from bs4 import BeautifulSoup
@@ -48,11 +48,27 @@ def crawl_news_text(link_news, language = "Vietnamese",
         title = title_tag.text
     except:
         title = ""
+    for domain in domain_time_map.keys():
+        if link_news.startswith(domain):
+            time_tag_attr = domain_time_map[domain]
+            if "tag" in time_tag_attr.keys():
+                time_tag = soup.find(time_tag_attr["tag"])
+                try:
+                    time = time_tag["datetime"]
+                except:
+                    time = time_tag.text
+            else:
+                time_tag = soup.find(attrs=time_tag_attr["attr"])
+                try:
+                    time = time_tag["datetime"]
+                except:
+                    time = time_tag.text
+            break
     paragraphs = justext.justext(response.content, justext.get_stoplist(language))
     for paragraph in paragraphs:
         if not paragraph.is_boilerplate:
             result.append(paragraph.text)
-    return title, '\n'.join(result)
+    return title, time, '\n'.join(result)
 
 # print(crawl_list_news("https://uni.fpt.edu.vn/tin-tuc-su-kien/tin-tieu-diem?pagenumber=1", attr="news-item-wrapper"))
 # print(len(crawl_list_news(
@@ -61,4 +77,3 @@ def crawl_news_text(link_news, language = "Vietnamese",
 #     attr=["cat-listnews hzol-clear", "story clearfix"],
 #     domain="https://kienthuc.net.vn/"
 # )))
-# crawl_news_text("https://hanoi.fpt.edu.vn/mua-he-ruc-ro-chuong-trinh-tieng-anh-chuyen-sau-level-6-tai-philippines-va-malaysia.html")

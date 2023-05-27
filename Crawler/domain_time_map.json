@@ -1,0 +1,47 @@
+{
+    "https://hanoi.fpt.edu.vn/": {
+        "tag": "time"
+    },
+    "https://daihoc.fpt.edu.vn/": {
+        "tag": "time"
+    },
+    "https://vnexpress.net/": {
+        "attr": "date"
+    },
+    "https://baomoi.com/": {
+        "tag": "time"
+    },
+    "https://zingnews.vn/": {
+        "attr": "the-article-publish"
+    },
+    "https://vietnamnet.vn/": {
+        "attr": "bread-crumb-detail__time"
+    },
+    "https://chungta.vn/": {
+        "attr": "time"
+    },
+    "https://dantri.com.vn/": {
+        "tag": "time"
+    },
+    "https://daibieunhandan.vn/": {
+        "attr": "box-date"
+    },
+    "https://tiin.vn/": {
+        "attr": "publish-time float-left"
+    },
+    "https://giaoduc.net.vn/": {
+        "attr": "time"
+    },
+    "https://plo.vn/": {
+        "tag": "time"
+    },
+    "https://baoxaydung.com.vn/": {
+        "attr": "format_date"
+    },
+    "https://danviet.vn/": {
+        "attr": "publishdate"
+    },
+    "https://kienthuc.net.vn/": {
+        "tag": "time"
+    }
+}
