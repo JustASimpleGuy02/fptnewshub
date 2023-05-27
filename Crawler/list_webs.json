@@ -358,8 +358,103 @@
         "status": true
     },
     {
-        "path": "https://nld.com.vn/tim-kiem.htm?keywords=%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20fpt",
+        "path": "https://www.google.com/search?q=%C4%91%E1%BA%A1i+h%E1%BB%8Dc+fpt+site:nld.com.vn",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "&start=",
+            "postfix": "0",
+            "attr": "yuRUbf",
+            "start_from_page": 0,
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vtc.vn",
         "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baove.congly.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "giadinh.suckhoedoisong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "saostar.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "vietnamplus.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "vnp"
+        },
+        "status": false
+    },
+    {
+        "path": "tuoitre.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "baotintuc.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "cand.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": false
+    },
+    {
+        "path": "baochinhphu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "baophapluat.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "tienphong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "tpo"
+        },
         "status": false
     }
 ]

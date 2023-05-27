@@ -1,5 +1,9 @@
 # return a list of news' link from a webpage
-def crawl_list_news(link, tag = None, attr = None, domain = ""):
+def crawl_list_news(link, 
+                    tag = None, 
+                    attr = None, 
+                    domain = "",
+                    result_end = ""):
     from bs4 import BeautifulSoup
     import requests
     
@@ -32,7 +36,36 @@ def crawl_list_news(link, tag = None, attr = None, domain = ""):
             parent_tag = article.find("a", href=True)
             href = parent_tag['href']
             # print(href)
+            if len(result_end) > 0 and not (domain + href).endswith(result_end):
+                continue
             list_link.append(domain + href)
+        except:
+            continue
+    return list(set(list_link))
+
+def crawl_list_news_gg(domain,
+                       page,
+                       result_end = ""):
+    from bs4 import BeautifulSoup
+    import requests
+    
+    list_link = []
+    headers = {
+         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+    }
+    response = requests.get("https://www.google.com/search?q=đại+học+fpt+site:{}&start={}".format(domain, (page-1)*10), 
+                            headers=headers)
+    # print(response.text)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    article_list = soup.find_all(attrs="yuRUbf")
+    for article in article_list:
+        try:
+            parent_tag = article.find("a", href=True)
+            href = parent_tag['href']
+            # print(href)
+            if len(result_end) > 0 and not (domain + href).endswith(result_end):
+                continue
+            list_link.append(href)
         except:
             continue
     return list(set(list_link))
@@ -85,12 +118,17 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     return title, time, '\n'.join(result)
 
 # print((crawl_list_news(
-#     link="https://fsb.edu.vn/tin-fsb-e252.html",
+#     link="https://www.google.com/search?q=%C4%91%E1%BA%A1i+h%E1%BB%8Dc+fpt+site:nld.com.vn&start=0",
 #     tag=None,
-#     attr="col-xs-12 col-sm-12 col-md-12 col-lg-12 list_blog_txt",
-#     domain=""
+#     attr="yuRUbf",
+#     domain="",
+#     result_end="htm"
 # )))
 
 # import json
-# print(crawl_news_text("https://fpt.edu.vn/tin-tuc/fpt-edu-tin-tuc-chung/10000-sv-dh-fpt-tham-gia-ngay-hoi-viec-lam",
+# print(crawl_news_text("https://fpt.com.vn/vi/tin-tuc/tin-fpt/dai-hoc-fpt-to-chuc-ky-thi-tuyen-sinh-dot-4-ngay-25-9",
 #                       domain_time_map=json.load(open("domain_time_map.json")))[1])
+
+# print(crawl_list_news_gg(domain="vtc.vn",
+#                    page=1,
+#                    result_end=""))
