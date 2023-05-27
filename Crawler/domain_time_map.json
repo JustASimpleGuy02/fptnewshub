@@ -46,5 +46,11 @@
     },
     "https://caodang.fpt.edu.vn": {
         "attr": "date"
+    },
+    "https://uni.fpt.edu.vn": {
+        "tag": "time"
+    },
+    "https://fpt.edu.vn": {
+        "attr": "fe-counter"
     }
 }

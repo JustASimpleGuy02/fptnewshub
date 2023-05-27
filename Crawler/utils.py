@@ -55,6 +55,7 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
         title = title_tag.text
     except:
         title = ""
+    time = ""
     for domain in domain_time_map.keys():
         if link_news.startswith(domain):
             time_tag_attr = domain_time_map[domain]
@@ -91,5 +92,5 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
 # )))
 
 # import json
-# print(crawl_news_text("https://chungta.vn/nguoi-fpt/vong-tranh-tai-top-50-fpt-under-35-thay-doi-the-thuc-1136839.html",
+# print(crawl_news_text("https://fpt.edu.vn/tin-tuc/fpt-edu-tin-tuc-chung/10000-sv-dh-fpt-tham-gia-ngay-hoi-viec-lam",
 #                       domain_time_map=json.load(open("domain_time_map.json")))[1])
