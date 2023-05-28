@@ -9,7 +9,7 @@ def crawl_list_news(link,
     
     list_link = []
     headers = {
-         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
     }
     response = requests.get(link, headers=headers)
     # print(response.text)
@@ -51,9 +51,9 @@ def crawl_list_news_gg(domain,
     
     list_link = []
     headers = {
-         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
     }
-    response = requests.get("https://www.google.com/search?q=đại+học+fpt+site:{}&start={}".format(domain, (page-1)*10), 
+    response = requests.get("https://www.google.com/search?q=đại+học+fpt+site:{}&num=100&start={}".format(domain, (page-1)*100), 
                             headers=headers)
     # print(response.text)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -129,6 +129,6 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
 # print(crawl_news_text("https://fpt.com.vn/vi/tin-tuc/tin-fpt/dai-hoc-fpt-to-chuc-ky-thi-tuyen-sinh-dot-4-ngay-25-9",
 #                       domain_time_map=json.load(open("domain_time_map.json")))[1])
 
-# print(crawl_list_news_gg(domain="vtc.vn",
+# print(crawl_list_news_gg(domain="cand.com.vn",
 #                    page=1,
-#                    result_end=""))
+#                    result_end="/")[0])

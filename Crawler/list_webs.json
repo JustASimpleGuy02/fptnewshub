@@ -383,7 +383,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "giadinh.suckhoedoisong.vn",
@@ -391,7 +391,7 @@
         "info": {
             "result_end": "htm"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "saostar.vn",
@@ -399,7 +399,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "vietnamplus.vn",
@@ -407,7 +407,7 @@
         "info": {
             "result_end": "vnp"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "tuoitre.vn",
@@ -415,7 +415,7 @@
         "info": {
             "result_end": "htm"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "baotintuc.vn",
@@ -423,7 +423,7 @@
         "info": {
             "result_end": "htm"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "cand.com.vn",
@@ -431,7 +431,7 @@
         "info": {
             "result_end": "/"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "baochinhphu.vn",
@@ -454,6 +454,230 @@
         "type_crawl": 2,
         "info": {
             "result_end": "tpo"
+        },
+        "status": false
+    },
+    {
+        "path": "giaoducthudo.giaoducthoidai.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "thanhnien.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "kenh14.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "chn"
+        },
+        "status": false
+    },
+    {
+        "path": "toquoc.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "nhadautu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "lambangnhanh.net",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "vov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "vov"
+        },
+        "status": false
+    },
+    {
+        "path": "laodong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "ldo"
+        },
+        "status": false
+    },
+    {
+        "path": "hoalactot.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "covid19.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": false
+    },
+    {
+        "path": "nghean24h.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "thi.tuyensinh247.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "khoahocdoisong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "truyenhinhnghean.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "baogiaothong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "edunet.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "congthuong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "kenhtuyensinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "msn.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "sggp.org.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "afamily.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "accgroup.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "trangtin24h.net",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "vuihoc.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "pgdphurieng.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "yeah1.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": false
+    },
+    {
+        "path": "cafef.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "chn"
+        },
+        "status": false
+    },
+    {
+        "path": "tin247.news",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
         },
         "status": false
     }
