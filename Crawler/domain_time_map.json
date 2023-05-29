@@ -52,5 +52,137 @@
     },
     "https://fpt.edu.vn": {
         "attr": "fe-counter"
+    },
+    "https://nld.com.vn/": {
+        "attr": "pdate fl"
+    },
+    "https://vtc.vn": {
+        "attr": "time-update mr10"
+    },
+    "https://baove.congly.vn": {
+        "attr": "sc-longform-header-date block-sc-publish-time"
+    },
+    "https://giadinh.suckhoedoisong.vn": {
+        "attr": {"data-role": "publishdate"}
+    },
+    "https://www.saostar.vn": {
+        "tag": "time"
+    },
+    "https://www.vietnamplus.vn": {
+        "tag": "time"
+    },
+    "https://tuoitre.vn": {
+        "attr": {"data-role": "publishdate"}
+    },
+    "https://baotintuc.vn": {
+        "attr": [
+            "action-link",
+            "txt"
+        ]
+    },
+    "https://cand.com.vn": {
+        "attr": "box-date"
+    },
+    "https://baochinhphu.vn": {
+        "attr": {"data-role": "publishdate"}
+    },
+    "https://baophapluat.vn": {
+        "tag": "time"
+    },
+    "https://tienphong.vn": {
+        "tag": "time"
+    },
+    "https://giaoducthudo.giaoducthoidai.vn": {
+        "attr": "c-detail-head__time"
+    },
+    "https://thanhnien.vn": {
+        "attr": {"data-role": "publishdate"}
+    },
+    "https://kenh14.vn": {
+        "attr": "kbwcm-time"
+    },
+    "https://ttvn.toquoc.vn": {
+        "attr": "dateandcat"
+    },
+    "https://nhadautu.vn": {
+        "attr": [
+            "box_infomation",
+            "time_news"
+        ]
+    },
+    "https://vov.vn": {
+        "attr": "col-md-4 mb-2"
+    },
+    "https://laodong.vn": {
+        "attr": [
+            "info", 
+            "time"
+        ]
+    },
+    "https://hoalactot.vn": {
+        "attr": "note fl"
+    },
+    "https://covid19.gov.vn": {
+        "attr": {"data-role": "publishdate"}
+    },
+    "https://nghean24h.vn": {
+        "tag": "time"
+    },
+    "https://thi.tuyensinh247.com": {
+        "attr": "postdate"
+    },
+    "https://khoahocdoisong.vn": {
+        "tag": "time"
+    },
+    "https://truyenhinhnghean.vn": {
+        "attr": "date"
+    },
+    "https://www.baogiaothong.vn": {
+        "attr": "dateArt"
+    },
+    "https://edunet.vn": {
+        "attr": "datepost txtCenter"
+    },
+    "https://congthuong.vn": {
+        "attr": "format_time"
+    },
+    "https://kenhtuyensinh.vn": {
+        "attr": "publish-date"
+    },
+    "https://www.msn.com": {
+        "attr": "viewsAuthors"
+    },
+    "https://www.sggp.org.vn": {
+        "attr": "time"
+    },
+    "https://afamily.vn": {
+        "tag": "time"
+    },
+    "https://trangtin24h.net": {
+        "attr": "date-time-news-detail"
+    },
+    "https://vuihoc.vn": {
+        "attr": "fas fa-clock"
+    },
+    "https://pgdphurieng.edu.vn": {
+        "attr": "entry-time"
+    },
+    "https://yeah1.com": {
+        "attr": "d-flex align-items-center mt15 time-create"
+    },
+    "https://cafef.vn": {
+        "attr": "pdate"
+    },
+    "https://www.tin247.news": {
+        "attr": "date"
+    },
+    "https://www.24h.com.vn": {
+        "attr": "cate-24h-foot-arti-deta-cre-post"
+    },
+    "https://www.doisongphapluat.com": {
+        "attr": "fs2"
+    },
+    "https://tintuconline.com.vn": {
+        "attr": "detail-article-date"
     }
 }

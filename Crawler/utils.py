@@ -104,15 +104,21 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
                         time = time_tag.text
                     except:
                         time = ""
-            else:
-                time_tag = soup.find(attrs=time_tag_attr["attr"])
+            elif "attr" in time_tag_attr.keys():
                 try:
-                    time = time_tag["datetime"]
-                except:
+                    if type(time_tag_attr["attr"]) == list:
+                        tag = soup
+                        for attr in time_tag_attr["attr"][:-1]:
+                            tag = tag.find(attrs=attr)
+                        time_tag = tag.find(attrs=time_tag_attr["attr"][-1])
+                    else:
+                        time_tag = soup.find(attrs=time_tag_attr["attr"])
                     try:
-                        time = time_tag.text
+                        time = time_tag["datetime"]
                     except:
-                        time = ""
+                        time = time_tag.text
+                except:
+                    time = ""
             break
     try:
         paragraphs = justext.justext(response.content, justext.get_stoplist(language))
@@ -132,8 +138,9 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
 # )))
 
 # import json
-# print(crawl_news_text("https://fpt.com.vn/vi/tin-tuc/tin-fpt/dai-hoc-fpt-to-chuc-ky-thi-tuyen-sinh-dot-4-ngay-25-9",
-#                       domain_time_map=json.load(open("domain_time_map.json")))[1])
+# filename = "https://tintuconline.com.vn/giao-duc/dh-fpt-ra-thong-bao-khan-cap-khi-phat-hien-1-sinh-vien-duong-tinh-voi-covid19-n-468291.html"
+# print(crawl_news_text(filename,
+#                       domain_time_map=json.load(open("domain_time_map.json")))[0:2])
 
 # print(crawl_list_news_gg(domain="cand.com.vn",
 #                    page=1,
