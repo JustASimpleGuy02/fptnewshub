@@ -129,12 +129,12 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
         result = [""]
     return title, time, '\n'.join(result)
 
-# print((crawl_list_news(
-#     link="https://www.google.com/search?q=%C4%91%E1%BA%A1i+h%E1%BB%8Dc+fpt+site:nld.com.vn&start=0",
-#     tag=None,
-#     attr="yuRUbf",
+# print(len(crawl_list_news(
+#     link="https://caohoc.fpt.edu.vn/tin-tuc-su-kien/trang-1.html",
+#     tag="article",
+#     attr=None,
 #     domain="",
-#     result_end="htm"
+#     result_end=""
 # )))
 
 # import json
@@ -142,6 +142,6 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
 # print(crawl_news_text(filename,
 #                       domain_time_map=json.load(open("domain_time_map.json")))[0:2])
 
-# print(crawl_list_news_gg(domain="cand.com.vn",
+# print(crawl_list_news_gg(domain="vdca.org.vn",
 #                    page=1,
-#                    result_end="/")[0])
+#                    result_end="")[0])

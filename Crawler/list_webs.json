@@ -704,5 +704,919 @@
             "result_end": "html"
         },
         "status": true
+    },
+    {
+        "path": "https://funix.edu.vn/",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "page/",
+            "postfix": "/?s=fpt&post_type=post#038;post_type=post",
+            "attr": "title-item-search"
+        },
+        "status": true
+    },
+    {
+        "path": "https://dnuni.fpt.edu.vn/chuyen-muc/tin-tuc/",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "page/",
+            "postfix": "/",
+            "tag": "article"
+        },
+        "status": true
+    },
+    {
+        "path": "https://cantho.fpt.edu.vn/tin-tuc/tin-tuc-chung-1?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/hoat-dong-huong-nghiep?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/khoi-nghiep?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/ket-noi-doanh-nghiep?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/fpt-hitech?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/cau-chuyen-giao-duc?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/bao-chi-noi-ve-dai-hoc-fpt?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://hcmuni.fpt.edu.vn/tin-tuc/hoi-nhap-quoc-te?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/hoat-dong-huong-nghiep?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/khoi-nghiep?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/ket-noi-doanh-nghiep?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/fpt-hitech?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/cau-chuyen-giao-duc?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/bao-chi-noi-ve-dai-hoc-fpt?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qnuni.fpt.edu.vn/tin-tuc/hoi-nhap-quoc-te?",
+        "type_crawl": 1,
+        "info": {
+            "prefix": "pagenumber=",
+            "postfix": "",
+            "attr": "desktop-title"
+        },
+        "status": true
+    },
+    {
+        "path": "vdca.org.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "foxnews.fpt.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "yan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "truyenhinhthanhhoa.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "xaluannews.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "unizone.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "daidoanket.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "haiquanonline.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "qdnd.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vneconomy.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kiemsat.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thoibaotaichinhvietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchitaichinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thoibaonganhang.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchinganhang.gov.vn/",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchitoaan.vn/",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://tapchibaohiemxahoi.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vietnam.vnanet.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thanhtra.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://thanhtravietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://nongnghiep.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://baovanhoa.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://baodansinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "http://vanhoanghethuat.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vietq.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://qltt.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://consosukien.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baodautu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baodauthau.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://baovephapluat.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thuenhanuoc.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://thethaovanhoa.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kinhtevadubao.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchigiaothong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://ictvietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baodantoc.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baohaiquanvietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://dantocmiennui.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchicongthuong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baoquocte.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchixaydung.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchigiaoduc.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tcnn.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://baokiemtoan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "http://antoanthongtin.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "http://antoanthongtin.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://vjst.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "aspx"
+        },
+        "status": true
+    },
+    {
+        "path": "https://baotainguyenmoitruong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vtv.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://nhandan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://dangcongsan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://phunuvietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://trithuccuocsong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://laodongcongdoan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://phunumoi.net.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://www.nguoiduatin.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://diendandoanhnghiep.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://congnghevadoisong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://1thegioi.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://markettimes.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://taichinhdoanhnghiep.net.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://congluan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thoidai.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kinhtechungkhoan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://nhandaoonline.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://chatluongvacuocsong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://mekongasean.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://trithuctructuyen.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thuonghieucongluan.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thuonghieusanpham.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://suckhoecong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://doanhnghiepvn.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://doanhnghiephoinhap.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kinhtedouong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thuonghieuvaphapluat.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://suckhoecongdongonline.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vietnamfinance.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
     }
 ]
