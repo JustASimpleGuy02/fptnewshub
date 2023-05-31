@@ -1500,7 +1500,135 @@
         "status": true
     },
     {
-        "path": "",
+        "path": "https://doanhnghieptiepthi.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://tapchinongthonmoi.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "http://baovannghe.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://ngaymoionline.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://petrotimes.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thuonggiaonline.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://kinhdoanhvabienmau.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "kdbm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://dientungaynay.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://dientuungdung.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://lyluanchinhtrivatruyenthong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://thanhnienviet.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://nghenhinvietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "https://vnmedia.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vanhienplus.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://vanhoavaphattrien.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://phaply.net.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "https://otoxemay.vn",
         "type_crawl": 2,
         "info": {
             "result_end": ""
@@ -1508,7 +1636,7 @@
         "status": false
     },
     {
-        "path": "",
+        "path": "http://hanoimoi.com.vn",
         "type_crawl": 2,
         "info": {
             "result_end": ""
@@ -1516,106 +1644,106 @@
         "status": false
     },
     {
-        "path": "",
+        "path": "https://tuoitrethudo.com.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "http://nguoihanoi.com.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://thesaigontimes.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "/"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://doanhnhansaigon.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://tcdulichtphcm.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://kinhtedothi.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://giaoduc.edu.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "htm"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://laodongthudo.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://baophunuthudo.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://www.phunuonline.com.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "http://quocphongthudo.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://giacngo.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     },
     {
-        "path": "",
+        "path": "https://baosonla.org.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
         "status": false
     }
