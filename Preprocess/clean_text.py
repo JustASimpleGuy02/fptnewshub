@@ -194,7 +194,6 @@ if __name__ == '__main__':
     
     ### Read csv
     df = pd.read_csv(ifile)
-    df = df.drop('Unnamed: 0', axis=1)
     
     print('Number of links:', len(df))
     
@@ -215,12 +214,14 @@ if __name__ == '__main__':
         try:
             content = row.title + '. ' + row.text
         except:
-            if isinstance(row.title, float):
+            if isinstance(row.title, float) and isinstance(row.text, float):
+                # content = ''
+                continue
+            elif isinstance(row.title, float):
                 content = row.text
             elif isinstance(row.text, float):
                 content = row.title
-            else:
-                content = ''
+
             ic(row.title, row.text)
             
         cleaned_content = tien_xu_li(content)
