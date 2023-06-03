@@ -3,16 +3,12 @@ import pandas as pd
 from datetime import datetime, timedelta
 from dateutil.parser import parse
 from tqdm import tqdm
+from Utils.utils import *
+from pytz import timezone
+from icecream import ic
 
-def convert_datetime(time: str):
-    format = '%d/%m/%Y %H:%M %z' 
+imezone = timezone("Asia/Saigon")
 
-    time = time.replace(',', '')
-    time = time.split(' ')
-    date_time = time[2] + ' ' + time[3] + ' ' + '+0700'
-    
-    date_time_python = datetime.strptime(date_time, format)
-    return date_time_python
 
 def get_first_date_of_week(time: str):
     ymd = time.split(' ')[0].split('-')
@@ -32,26 +28,9 @@ if __name__ == '__main__':
     ifile = args.ifile
     odir = args.odir
     
-    ### Get today's time, first day, and last day of week
-    now = datetime.now()
-    start_week = now - timedelta(days=now.weekday())
-    end_week = start_week + timedelta(days=6)
-    print(start_week)    
-
-    ### Get last week's first day, and last week's last day
-    start_last_week = start_week - timedelta(days=7)
-    end_last_week = end_week - timedelta(days=7)
-    print(start_last_week)    
-    
     ### Read csv files
-    df = pd.read_csv(ifile)
+    df = read_csv(ifile)
     print('Original number of links:', len(df))
-    
-    ## Remove unecessary column
-    remove_col = 'Unnamed: 0'
-
-    if remove_col in df.columns.to_list():
-        df.drop(columns=remove_col, inplace=True)
         
     ## Drop nan time
     df = df[df['time'].notna()]
@@ -59,11 +38,19 @@ if __name__ == '__main__':
         
     ### Convert time to datetime
     for idx, row in tqdm(df.iterrows()):
+        time = row.time
+
         try:
-            row.time = parse(row.time)
+            time_parsed = parse(time)
         except:
-            row.time = convert_datetime(row.time)
+            time_parsed = extract_datetime(time)
+        
+        # localize a datetime 
+        if time_parsed.tzinfo is None:
+            time_parsed = imezone.localize(time_parsed)
             
+        row.time  = time_parsed
+    
     df.sort_values(by=['time'], ascending = False, inplace = True)
 
     print(df.head())    
