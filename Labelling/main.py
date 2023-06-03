@@ -6,13 +6,16 @@ from termcolor import cprint
 
 def continue_label():
     while True:
-        option = input("Resume labelling? (y/n): ")
-
+        try:
+            option = int(input("Resume labelling? (0 or 1): "))
+        except:
+            print("Invalid input. Please enter an integer.")
+            
         # Validate the input
-        if option in ['y', 'n']:
+        if option in [0, 1]:
             break
         else:
-            print("Invalid input. Please enter y or n.")
+            print("Invalid input. Please enter 0 or 1.")
     return option
 
 def parse_args():
@@ -77,7 +80,7 @@ if __name__ == '__main__':
         resume_index = index + 1
 
         # Stop labelling if user does not want to resume
-        if continue_label() == 'n':
+        if continue_label() == 0:
             break
         print()
 
