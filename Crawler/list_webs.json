@@ -1633,7 +1633,7 @@
         "info": {
             "result_end": ""
         },
-        "status": false
+        "status": true
     },
     {
         "path": "http://hanoimoi.com.vn",
@@ -1641,7 +1641,7 @@
         "info": {
             "result_end": ""
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://tuoitrethudo.com.vn",
@@ -1649,7 +1649,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "http://nguoihanoi.com.vn",
@@ -1657,7 +1657,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://thesaigontimes.vn",
@@ -1665,7 +1665,7 @@
         "info": {
             "result_end": "/"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://doanhnhansaigon.vn",
@@ -1673,7 +1673,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://tcdulichtphcm.vn",
@@ -1681,7 +1681,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://kinhtedothi.vn",
@@ -1689,7 +1689,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://giaoduc.edu.vn",
@@ -1697,7 +1697,7 @@
         "info": {
             "result_end": "htm"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://laodongthudo.vn",
@@ -1705,7 +1705,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://baophunuthudo.vn",
@@ -1713,7 +1713,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://www.phunuonline.com.vn",
@@ -1721,7 +1721,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "http://quocphongthudo.vn",
@@ -1729,7 +1729,7 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://giacngo.vn",
@@ -1737,13 +1737,349 @@
         "info": {
             "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
         "path": "https://baosonla.org.vn",
         "type_crawl": 2,
         "info": {
             "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "voz.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ddth.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "vn-z.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "tinhte.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "techrum.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vfo.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "webtretho.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "diendan.hocmai.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "kenhsinhvien.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "gamevn.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "dembuon.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "chiase.org",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "5giay.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "lamchame.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "mmo4me.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "fpt.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "fsb.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "caohoc.fpt.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "cafebiz.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "chn"
+        },
+        "status": true
+    },
+    {
+        "path": "tinnhanhchungkhoan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "banduong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "theleader.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "https://luathoangphi.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "https://giaoduc247.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "binhdinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "canhcam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "muaban.net",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "hhtp.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "daotaolientuc.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "vieclamvui.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "vnu.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "bachhoaxanh.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "sisvnu.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "huongnghiepcdm.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ptehelper.com.au",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "reviewedu.net",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "btec.fpt.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": false
+    },
+    {
+        "path": "",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
         },
         "status": false
     }
