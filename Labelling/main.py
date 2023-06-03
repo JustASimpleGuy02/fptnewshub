@@ -4,10 +4,22 @@ import os.path as osp
 from Utils.utils import *
 from termcolor import cprint
 
+def continue_label():
+    while True:
+        option = input("Resume labelling? (y/n): ")
+
+        # Validate the input
+        if option in ['y', 'n']:
+            break
+        else:
+            print("Invalid input. Please enter y or n.")
+    return option
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Labelling text from csv file")
     parser.add_argument('ifile', help='input csv file which has cleaned texts')
     parser.add_argument('index_file', help='resume index file')
+    parser.add_argument('-r', '--restart', action='store_true', help='restart labelling from the beginning of file')
     args = parser.parse_args()
     return args
 
@@ -16,6 +28,7 @@ if __name__ == '__main__':
     
     ifile = args.ifile
     resume_file = args.index_file
+    restart = args.restart
     
     # Read the input CSV file
     df = read_csv(ifile)
@@ -30,6 +43,8 @@ if __name__ == '__main__':
     except FileNotFoundError:
         pass
 
+    if restart:
+        df['Negative'] = None
 
     # Iterate over each row and prompt the user for input
     for index, row in df.iterrows():
@@ -61,11 +76,14 @@ if __name__ == '__main__':
         # Save the index for resuming later
         resume_index = index + 1
 
-        # Save the DataFrame and resume index to files
-        df.to_csv(ifile, index=False)
-        with open(resume_file, 'w') as file:
-            file.write(str(resume_index))
-
+        # Stop labelling if user does not want to resume
+        if continue_label() == 'n':
+            break
         print()
+
+    # Save the DataFrame and resume index to files
+    df.to_csv(ifile, index=False)
+    with open(resume_file, 'w') as file:
+        file.write(str(resume_index))
 
     print("All lines processed and saved successfully.")

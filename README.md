@@ -29,4 +29,8 @@ Example:
 $ python Labelling/preprocess.py Cleaned_Data/cleaned_text_25_5.csv labelling_text_25_5.csv
 $ python Labelling/main.py labelling_text_25_5.csv resume.txt
 ```
-Muốn bắt đầu lại thì xóa file resume.txt
+Label lại từ đầu:
+``` 
+$ rm resume.txt
+$ python Labelling/main.py labelling_text_25_5.csv -r
+```
