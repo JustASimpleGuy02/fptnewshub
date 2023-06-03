@@ -4,3 +4,9 @@ requests
 ipykernel
 justext
 tqdm
+pyvi
+regex
+icecream
+wordcloud
+matplotlib
+termcolor
