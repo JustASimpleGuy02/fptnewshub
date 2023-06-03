@@ -9,3 +9,4 @@ regex
 icecream
 wordcloud
 matplotlib
+termcolor
