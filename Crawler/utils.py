@@ -130,9 +130,9 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     return title, time, '\n'.join(result)
 
 # print(len(crawl_list_news(
-#     link="https://caohoc.fpt.edu.vn/tin-tuc-su-kien/trang-1.html",
-#     tag="article",
-#     attr=None,
+#     link="https://fschool.fpt.edu.vn/tin-tuc/page/1/",
+#     tag=None,
+#     attr="new_postBottom",
 #     domain="",
 #     result_end=""
 # )))
