@@ -1,28 +1,13 @@
-
-
-def get_news_by_week():
-    # read from csv files by week
-    
-    pass
-
-def get_recent_news():
-    # crawl recent news
-    
-    pass
-
-def display_news():
-     # display histogram statistics
-    
-    # display wordcloud of recent news (within 2 weeks)
-    
-    # display news and links
-    
-    pass
+from get_news import *
+from display import *
 
 def main():
-    news_weekly = get_news_by_week()
-    news_recent = get_recent_news()
-    display_news()
+    df_news, weeks, mentions = get_news_by_week()
+    # recent_news = get_recent_news()
+
+    display_statistics(weeks, mentions)
+    recent_news = display_wordcloud(df_news, 4)
+    display_news(recent_news)
 
 if __name__ == '__main__':
     main()

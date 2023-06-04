@@ -8,9 +8,9 @@ from icecream import ic
 import os
 import os.path as osp
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
-stopwords_list = stopwords.read().split('\n')
+# dir_path = os.path.dirname(os.path.realpath(__file__))
+# stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
+# stopwords_list = stopwords.read().split('\n')
 
 bang_nguyen_am= [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
