@@ -2044,36 +2044,1732 @@
         "status": true
     },
     {
-        "path": "",
+        "path": "tuyensinhso.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
-        "path": "",
+        "path": "123job.vn",
         "type_crawl": 2,
         "info": {
-            "result_end": ""
+            "result_end": "html"
         },
-        "status": false
+        "status": true
     },
     {
-        "path": "",
+        "path": "jobtest.vn",
         "type_crawl": 2,
         "info": {
             "result_end": ""
         },
-        "status": false
+        "status": true
     },
     {
-        "path": "",
+        "path": "trangtuyensinh.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "trangedu.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "edu2review.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "gooreact.online",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "fili.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "hnue.edu.vn",
         "type_crawl": 2,
         "info": {
             "result_end": ""
         },
-        "status": false
+        "status": true
+    },
+    {
+        "path": "genk.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "chn"
+        },
+        "status": true
+    },
+    {
+        "path": "baocantho.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "tapchicongsan.org.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "aspx"
+        },
+        "status": true
+    },
+    {
+        "path": "kienviet.net",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "doanhnhantrevietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "moitruongvadothi.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "mientay.giadinhonline.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "nss.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baodanang.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baohaiduong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hcmcpv.org.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bnews.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "nguoidothi.net.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "anninhthudo.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "antd"
+        },
+        "status": true
+    },
+    {
+        "path": "htv.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "techsignin.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baohaiphong.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baohagiang.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baocaobang.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baolaocai.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baolaichau.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baobackan.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baolangson.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baotuyenquang.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baoyenbai.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "aspx"
+        },
+        "status": true
+    },
+    {
+        "path": "baothainguyen.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baodienbienphu.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baophutho.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baovinhphuc.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baobacgiang.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baobacninh.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baoquangninh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baohoabinh.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baohungyen.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baohanam.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baothaibinh.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baonamdinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baoninhbinh.org.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baothanhhoa.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baonghean.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baohatinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baoquangbinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baoquangtri.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baothuathienhue.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baoquangnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baoquangngai.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baokontum.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baogialai.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baobinhdinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baophuyen.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baodaklak.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baokhanhhoa.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baodaknong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baolamdong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baoninhthuan.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "baobinhphuoc.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baotayninh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baobinhduong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baodongnai.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baobinhthuan.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "hochiminhcity.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baolongan.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baobariavungtau.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baodongthap.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "aspx"
+        },
+        "status": true
+    },
+    {
+        "path": "baoangiang.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "tiengiang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baovinhlong.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baodongkhoi.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baokiengiang.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baotravinh.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baohaugiang.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baosoctrang.org.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baobaclieu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "baocamau.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "anhp.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "nguonluc.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "antv.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "soha.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "htm"
+        },
+        "status": true
+    },
+    {
+        "path": "kinhtemoitruong.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "fptcity.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "jobsgo.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "cloudgo.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "tuyensinh.tvu.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "spnttw.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "glints.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "talkfirst.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "baoapbac.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "24h.index.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "sputniknews.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "truongptdtntthptdienbiendong.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "/"
+        },
+        "status": true
+    },
+    {
+        "path": "docbao.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "gamek.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "chn"
+        },
+        "status": true
+    },
+    {
+        "path": "2sao.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "ybox.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ngoisao.net",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "tuyengiao.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "nguoilambao.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "thuvienphapluat.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "viettimes.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "luatvietnam.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "noron.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "tapchiqptd.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "congan.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "brandsvietnam.com",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "songtre.com.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "niithanoi.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": "html"
+        },
+        "status": true
+    },
+    {
+        "path": "ajc.hcma.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "rfi.fr",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "namdinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "sotttt.sonla.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "mof.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bocongan.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "binhphuoc.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ninhbinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "danang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "mic.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "haiphong.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hagiang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "caobang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "laocai.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "laichau.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "backan.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "langson.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "tuyenquang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "yenbai.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thainguyen.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "dienbien.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "phutho.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vinhphuc.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bacgiang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bacninh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hanoi.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangninh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "haiduong.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hoabinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hungyen.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hanam.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thaibinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "namdinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ninhbinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thanhhoa.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "nghean.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hatinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangbinh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangtri.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thuathienhue.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangnam.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangngai.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "kontum.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "gialai.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "phuyen.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "daklak.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "khanhhoa.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "lamdong.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ninhthuan.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "tayninh.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "binhduong.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "dongnai.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "binhthuan.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vinhlong.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bentre.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "cantho.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "kiengiang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "soctrang.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baclieu.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "camau.gov.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vinhphuc.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "haiphong.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "haiduong.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bacninh.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hungyen.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "namdinh.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "ninhbinh.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangtri.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thuathienhue.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangngai.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "kontum.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "gialai.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "phuyen.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "khanhhoa.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "daknong.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "dongthap.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "angiang.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "vinhlong.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bentre.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "cantho.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "haugiang.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "baclieu.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "camau.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hcm.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "sonla.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "laichau.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "backan.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "langson.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "tuyenquang.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "yenbai.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thainguyen.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "dienbien.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bacgiang.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hanoi.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thaibinh.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "nghean.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "hatinh.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "quangbinh.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "greenwich.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "thptlequydontranyenyenbai.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
+    },
+    {
+        "path": "bariavungtau.edu.vn",
+        "type_crawl": 2,
+        "info": {
+            "result_end": ""
+        },
+        "status": true
     },
     {
         "path": "",

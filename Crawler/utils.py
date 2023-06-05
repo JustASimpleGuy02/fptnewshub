@@ -11,7 +11,8 @@ def crawl_list_news(link,
     headers = {
          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
     }
-    response = requests.get(link, headers=headers)
+    response = requests.get(link, 
+                            headers=headers)
     # print(response.text)
     soup = BeautifulSoup(response.text, 'html.parser')
     # print(soup)
@@ -128,20 +129,3 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     except:
         result = [""]
     return title, time, '\n'.join(result)
-
-# print(len(crawl_list_news(
-#     link="https://fschool.fpt.edu.vn/tin-tuc/page/1/",
-#     tag=None,
-#     attr="new_postBottom",
-#     domain="",
-#     result_end=""
-# )))
-
-# import json
-# filename = "https://tintuconline.com.vn/giao-duc/dh-fpt-ra-thong-bao-khan-cap-khi-phat-hien-1-sinh-vien-duong-tinh-voi-covid19-n-468291.html"
-# print(crawl_news_text(filename,
-#                       domain_time_map=json.load(open("domain_time_map.json")))[0:2])
-
-# print(crawl_list_news_gg(domain="vdca.org.vn",
-#                    page=1,
-#                    result_end="")[0])
