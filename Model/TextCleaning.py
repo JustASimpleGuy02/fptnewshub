@@ -121,16 +121,6 @@ def chuan_hoa_cau(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-def chuan_hoa_cau_2(text):
-    text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]', ' ', text) # giữ những regex đã đề cập
-    dot_between_number = []
-    final_results = [re.findall('(?<=\d)[.]{1}(?=\d)', s)[0] for s in text]
-    # for i in text:
-    #     if i. and i. : # nếu i đứng giữa 2 chữ số
-    #
-    #     else: # nếu i đứng giữa 2 ký tự / dấu cách
-
-
 with open('stopword.txt', 'r', encoding = 'utf-8') as f:
     stopwords_list = f.read().split('\n')
 
