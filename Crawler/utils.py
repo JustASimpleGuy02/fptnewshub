@@ -77,6 +77,7 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     import requests
     import justext
     from bs4 import BeautifulSoup
+    from htmldate import find_date
     
     result = []
     headers = {
@@ -93,34 +94,38 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     except:
         title = ""
     time = ""
-    for domain in domain_time_map.keys():
-        if link_news.startswith(domain):
-            time_tag_attr = domain_time_map[domain]
-            if "tag" in time_tag_attr.keys():
-                time_tag = soup.find(time_tag_attr["tag"])
-                try:
-                    time = time_tag["datetime"]
-                except:
-                    try:
-                        time = time_tag.text
-                    except:
-                        time = ""
-            elif "attr" in time_tag_attr.keys():
-                try:
-                    if type(time_tag_attr["attr"]) == list:
-                        tag = soup
-                        for attr in time_tag_attr["attr"][:-1]:
-                            tag = tag.find(attrs=attr)
-                        time_tag = tag.find(attrs=time_tag_attr["attr"][-1])
-                    else:
-                        time_tag = soup.find(attrs=time_tag_attr["attr"])
-                    try:
-                        time = time_tag["datetime"]
-                    except:
-                        time = time_tag.text
-                except:
-                    time = ""
-            break
+    try:
+        time = find_date(link_news)
+    except Exception as e:
+        print(e)
+    # for domain in domain_time_map.keys():
+    #     if link_news.startswith(domain):
+    #         time_tag_attr = domain_time_map[domain]
+    #         if "tag" in time_tag_attr.keys():
+    #             time_tag = soup.find(time_tag_attr["tag"])
+    #             try:
+    #                 time = time_tag["datetime"]
+    #             except:
+    #                 try:
+    #                     time = time_tag.text
+    #                 except:
+    #                     time = ""
+    #         elif "attr" in time_tag_attr.keys():
+    #             try:
+    #                 if type(time_tag_attr["attr"]) == list:
+    #                     tag = soup
+    #                     for attr in time_tag_attr["attr"][:-1]:
+    #                         tag = tag.find(attrs=attr)
+    #                     time_tag = tag.find(attrs=time_tag_attr["attr"][-1])
+    #                 else:
+    #                     time_tag = soup.find(attrs=time_tag_attr["attr"])
+    #                 try:
+    #                     time = time_tag["datetime"]
+    #                 except:
+    #                     time = time_tag.text
+    #             except:
+    #                 time = ""
+    #         break
     try:
         paragraphs = justext.justext(response.content, justext.get_stoplist(language))
         for paragraph in paragraphs:
