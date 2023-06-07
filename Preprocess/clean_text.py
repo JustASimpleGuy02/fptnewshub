@@ -131,6 +131,24 @@ def chuan_hoa_cau(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+with open('stopword.txt', 'r', encoding = 'utf-8') as f:
+    stopwords_list = f.read().split('\n')
+
+def bo_stopwords(text):
+    text = text.split(' ')
+    text = [t for t in text if t not in stopwords_list]
+    return ' '.join(text)
+
+# def bo_stopword(text):
+#     # stopwords_list = open('stopword.txt', 'r').read().split('\n')
+#     text = text.split()
+#     non_sw_text = []
+#     for word in text:
+#         if word not in stopwords_list:
+#             non_sw_text.append(word)
+#     result = ' '.join([str(item) for item in non_sw_text])
+#     return result
+
 def tien_xu_li(text):
 	text = chuan_hoa_unicode(text)
 	text = chuan_hoa_dau_cau_tieng_viet(text)
@@ -139,25 +157,6 @@ def tien_xu_li(text):
 	text = chuan_hoa_cau(text)
 # 	text = bo_stopword(text)
 	return text
-
-# def bo_stopwords(text):
-#     text = text.split(' ')
-#     text = [t for t in text if t not in stopwords_list]
-#     return ' '.join(text)
-
-def bo_stopword(text):
-    # stopwords_list = open('stopword.txt', 'r').read().split('\n')
-    text = text.split()
-    non_sw_text = []
-    for word in text:
-        if word not in stopwords_list:
-            non_sw_text.append(word)
-    result = ' '.join([str(item) for item in non_sw_text])
-    return result
-
-with open('..\Main\stopword.txt', 'r', encoding = 'utf-8') as f:
-    stopwords_list = f.read().split('\n')
-
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Clean text from csv file")
