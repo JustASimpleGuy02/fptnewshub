@@ -27,36 +27,47 @@ bang_nguyen_am= [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
 
 bang_ky_tu_dau = ['', 'f', 's', 'r', 'x', 'j']
 
+def chuan_hoa_unicode(text):
+    text = unicodedata.normalize('NFC', text)
+    return text
+
 nguyen_am_to_ids = {}
 for i in range(len(bang_nguyen_am)):
     for j in range(len(bang_nguyen_am[i]) - 1):
         nguyen_am_to_ids[bang_nguyen_am[i][j]] = (i, j)
-        
-def chuan_hoa_unicode(text):
-	text = unicodedata.normalize('NFC', text)
-	return text
+
+def is_valid_vietnam_word(word):
+    chars = word.split()
+    nguyen_am_index = -1
+    for index, char in enumerate(chars):
+        x, y = nguyen_am_to_ids.get(char, (-1, -1))
+        if x != -1:
+            if nguyen_am_index == -1:
+                nguyen_am_index = index
+            else:
+                if index - nguyen_am_index != 1:
+                    return False
+                nguyen_am_index = index
+    return True
 
 def chuan_hoa_dau_tu_tieng_viet(word):
-    """
-        Hàm này xử lý chuẩn hóa từng từ một, 
-    sau khi chuẩn hóa từng từ thì sẽ chuân hóa từng câu sau 
-    """ 
     if not is_valid_vietnam_word(word):
         return word
- 
-    chars = list(word)
+
+    chars = word.split()
     dau_cau = 0
     nguyen_am_index = []
     qu_or_gi = False
+
     for index, char in enumerate(chars):
         x, y = nguyen_am_to_ids.get(char, (-1, -1))
         if x == -1:
             continue
-        elif x == 9:  # check qu
+        elif x == 9:    #check qu
             if index != 0 and chars[index - 1] == 'q':
                 chars[index] = 'u'
                 qu_or_gi = True
-        elif x == 5:  # check gi
+        elif x == 5:    #check gi
             if index != 0 and chars[index - 1] == 'g':
                 chars[index] = 'i'
                 qu_or_gi = True
@@ -76,59 +87,28 @@ def chuan_hoa_dau_tu_tieng_viet(word):
                     chars[2] = bang_nguyen_am[x][dau_cau]
                 else:
                     chars[1] = bang_nguyen_am[5][dau_cau] if chars[1] == 'i' else bang_nguyen_am[9][dau_cau]
-            return ''.join(chars)
-        return word
- 
+            return  ''.join(chars)
+        return  word
+
     for index in nguyen_am_index:
         x, y = nguyen_am_to_ids[chars[index]]
-        if x == 4 or x == 8:  # ê, ơ
+        if x == 4 or x == 8:    #ê, ơ
             chars[index] = bang_nguyen_am[x][dau_cau]
-            # for index2 in nguyen_am_index:
-            #     if index2 != index:
-            #         x, y = nguyen_am_to_ids[chars[index]]
-            #         chars[index2] = bang_nguyen_am[x][0]
             return ''.join(chars)
- 
+
     if len(nguyen_am_index) == 2:
         if nguyen_am_index[-1] == len(chars) - 1:
             x, y = nguyen_am_to_ids[chars[nguyen_am_index[0]]]
             chars[nguyen_am_index[0]] = bang_nguyen_am[x][dau_cau]
-            # x, y = nguyen_am_to_ids[chars[nguyen_am_index[1]]]
-            # chars[nguyen_am_index[1]] = bang_nguyen_am[x][0]
         else:
-            # x, y = nguyen_am_to_ids[chars[nguyen_am_index[0]]]
-            # chars[nguyen_am_index[0]] = bang_nguyen_am[x][0]
             x, y = nguyen_am_to_ids[chars[nguyen_am_index[1]]]
             chars[nguyen_am_index[1]] = bang_nguyen_am[x][dau_cau]
     else:
-        # x, y = nguyen_am_to_ids[chars[nguyen_am_index[0]]]
-        # chars[nguyen_am_index[0]] = bang_nguyen_am[x][0]
         x, y = nguyen_am_to_ids[chars[nguyen_am_index[1]]]
         chars[nguyen_am_index[1]] = bang_nguyen_am[x][dau_cau]
-        # x, y = nguyen_am_to_ids[chars[nguyen_am_index[2]]]
-        # chars[nguyen_am_index[2]] = bang_nguyen_am[x][0]
     return ''.join(chars)
 
-def is_valid_vietnam_word(word):
-    chars = list(word)
-    nguyen_am_index = -1
-    for index, char in enumerate(chars):
-        x, y = nguyen_am_to_ids.get(char, (-1, -1))
-        if x != -1:
-            if nguyen_am_index == -1:
-                nguyen_am_index = index
-            else:
-                if index - nguyen_am_index != 1:
-                    return False
-                nguyen_am_index = index
-    return True
-
 def chuan_hoa_dau_cau_tieng_viet(sentence):
-    """
-        Chuyển câu tiếng việt về chuẩn gõ dấu kiểu cũ.
-        :param sentence:
-        :return:
-        """
     sentence = sentence.lower()
     words = sentence.split()
     for index, word in enumerate(words):
@@ -140,18 +120,16 @@ def chuan_hoa_dau_cau_tieng_viet(sentence):
     return ' '.join(words)
 
 def tach_tu_tieng_viet(text):
-	text = ViTokenizer.tokenize(text)
-	return text
+    text = ViTokenizer.tokenize(text)
+    return text
 
-# Đưa về chữ viết thường 
 def chuyen_chu_thuong(text):
-	return text.lower()
+    return text.lower()
 
-# Xóa đi các dấu cách thừa, các từ không cần thiết cho việc phân loại vẳn bản 
 def chuan_hoa_cau(text):
-	text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',text)
-	text = re.sub(r'\s+', ' ', text).strip()
-	return text
+    text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_.]', ' ', text) # giữ những regex đã đề cập
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
 
 def tien_xu_li(text):
 	text = chuan_hoa_unicode(text)
@@ -159,13 +137,27 @@ def tien_xu_li(text):
 	text = tach_tu_tieng_viet(text)
 	text = chuyen_chu_thuong(text)
 	text = chuan_hoa_cau(text)
-
+# 	text = bo_stopword(text)
 	return text
 
-def bo_stopwords(text):
-    text = text.split(' ')
-    text = [t for t in text if t not in stopwords_list]
-    return ' '.join(text)
+# def bo_stopwords(text):
+#     text = text.split(' ')
+#     text = [t for t in text if t not in stopwords_list]
+#     return ' '.join(text)
+
+def bo_stopword(text):
+    # stopwords_list = open('stopword.txt', 'r').read().split('\n')
+    text = text.split()
+    non_sw_text = []
+    for word in text:
+        if word not in stopwords_list:
+            non_sw_text.append(word)
+    result = ' '.join([str(item) for item in non_sw_text])
+    return result
+
+with open('..\Main\stopword.txt', 'r', encoding = 'utf-8') as f:
+    stopwords_list = f.read().split('\n')
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Clean text from csv file")
@@ -225,7 +217,6 @@ if __name__ == '__main__':
             ic(row.title, row.text)
             
         cleaned_content = tien_xu_li(content)
-        # cleaned_content = bo_stopwords(cleaned_content)
         
         # Add new row to output csv file
         out_df.loc[len(out_df.index)] = [row.link, row.time, cleaned_content]
