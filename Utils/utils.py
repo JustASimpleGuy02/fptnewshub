@@ -2,10 +2,6 @@ import pandas as pd
 import re
 from dateutil.parser import parse
 
-so_vn = ["không", "một", "hai",
-         "ba", "tư", "năm", "sáu",
-         "bảy", "tám", "chín"]
-
 def read_csv(fpath: str):
     df = pd.read_csv(fpath)
     
@@ -16,76 +12,3 @@ def read_csv(fpath: str):
         
     return df
 
-def pop_pattern(ptn: str, text: str):
-    try:
-        substr = re.search(ptn, text)[0]
-    except:
-        substr = ''
-    text = text.replace(substr, '')
-    return substr, text
-
-
-def extract_datetime(text: str):
-    text = text.lower()
-    
-    gmt_pattern = r"(?:GMT|UTC)?[+-]\d{2}(?::\d{2})?"
-    gmt = re.search(gmt_pattern, text)
-
-    try:
-        """
-        Format: dd/mm/yyyy (or dd-mm-yyyy) hh:mm 
-        """
-        # date_pattern = "[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}"
-        date_pattern = r"\d{1,2}[-/]\d{1,2}[-/]\d{4}"
-        # time_pattern = "[0-9]{2}:[0-9]{2}"
-        time_pattern = r"\d{1,2}:\d{2}"
-        # gmt_pattern = r"GMT[+-]\d{1,2}[:\d{1,2}]*"
-
-        date = re.search(date_pattern, text)
-        time = re.search(time_pattern, text)
-        # gmt = re.search(gmt_pattern, text)
-        
-        date = date[0].replace('-', '/')
-        date = '-'.join(date.split('/')[::-1])
-        
-        assert date is not None
-        
-        if time is None:
-            time = ['00:00']
-                    
-    except:
-        """
-        Format: Tháng mm, dd, yyyy
-        """
-        month_pattern = r"tháng \d+"
-        number_pattern = r"\d+"
-        year_patern = r"\d{4}"
-        time_pattern = r"\d{1,2}:\d{2}"
-        
-        for idx, so in enumerate(so_vn):
-            text = text.replace(so, str(idx))
-            
-        time, text = pop_pattern(time_pattern, text)
-        month, text = pop_pattern(month_pattern, text)
-        month, _ = pop_pattern(number_pattern, month)
-        year, text = pop_pattern(year_patern, text)
-        date, _ = pop_pattern(number_pattern, text)
-
-        date = '-'.join([year, month, date])
-        
-        if len(time) == 0:
-            time = ['00:00']
-        else:
-            time = [time]
-
-    if gmt is None:
-        gmt = ['+0700']
-        
-    datetime = [date, time[0], gmt[0]]
-    datetime = parse(' '.join(datetime))
-
-    return datetime
-
-if __name__ == '__main__':
-    text = "Tháng 5 ngày 20 năm 2019 8:20 GMT+09:00"
-    print(str(extract_datetime(text)))

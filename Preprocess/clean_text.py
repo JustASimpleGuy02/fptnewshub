@@ -8,9 +8,9 @@ from icecream import ic
 import os
 import os.path as osp
 
-# dir_path = os.path.dirname(os.path.realpath(__file__))
-# stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
-# stopwords_list = stopwords.read().split('\n')
+dir_path = os.path.dirname(os.path.realpath(__file__))
+stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
+stopwords_list = stopwords.read().split('\n')
 
 bang_nguyen_am= [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
@@ -153,14 +153,17 @@ def chuan_hoa_cau(text):
 	text = re.sub(r'\s+', ' ', text).strip()
 	return text
 
-def tien_xu_li(text):
-	text = chuan_hoa_unicode(text)
-	text = chuan_hoa_dau_cau_tieng_viet(text)
-	text = tach_tu_tieng_viet(text)
-	text = chuyen_chu_thuong(text)
-	text = chuan_hoa_cau(text)
+def tien_xu_li(text, no_stwrds: bool=True):
+    text = chuan_hoa_unicode(text)
+    text = chuan_hoa_dau_cau_tieng_viet(text)
+    text = tach_tu_tieng_viet(text)
+    text = chuyen_chu_thuong(text)
+    text = chuan_hoa_cau(text)
 
-	return text
+    if no_stwrds:
+        text = bo_stopwords(text)
+
+    return text
 
 def bo_stopwords(text):
     text = text.split(' ')

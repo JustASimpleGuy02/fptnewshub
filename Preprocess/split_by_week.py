@@ -4,12 +4,10 @@ from datetime import datetime, timedelta
 from dateutil.parser import parse
 from tqdm import tqdm
 from Utils import *
-from pytz import timezone
 from icecream import ic
 from collections import defaultdict
 import pytz
 
-imezone = timezone("Asia/Saigon")
 now = datetime.now(pytz.utc)
 
 # only get links from the past 5 weeks
@@ -46,20 +44,13 @@ if __name__ == '__main__':
     for idx, row in tqdm(df.iterrows()):
         time = row.time
 
-        try:
-            time_parsed = extract_datetime(time)
-        except:
-            time_parsed = parse(time)
-
-        # localize a datetime 
-        if time_parsed.tzinfo is None:
-            time_parsed = imezone.localize(time_parsed)
+        time_parsed = convert2datetime(time)
 
         if time_parsed < past_limit:
             continue
         
         # get first and end day of week of the current time
-        week = get_first_day_of_week(time_parsed)
+        week = get_week(time_parsed)
         
         # store link, date, text of the day in the dictionary with week the corresponding key
         link_meta = {'link': row.link,
@@ -69,6 +60,7 @@ if __name__ == '__main__':
                      'text': row.text}
         week2links[week].append(link_meta)
         
+    count = 0 
     # in each week sort the link by time and save to a csv
     for week, links_list in tqdm(week2links.items()):
         df_links = pd.DataFrame(links_list)
@@ -82,11 +74,15 @@ if __name__ == '__main__':
             old_df['time_parsed']= pd.to_datetime(old_df['time_parsed'])
             # concat 2 dataframes and remove duplicates
             df_links = pd.concat([old_df, df_links]).drop_duplicates()
-            
+                        
         df_links.sort_values(by=['time_parsed'], ascending=False, inplace = True)
         df_links.reset_index(drop=True, inplace=True)
 
         df_links.to_csv(out_path, index=False)
+        
+        count += len(df_links)
+        
+    print('Number of links:', count)
         
     
     

@@ -10,3 +10,4 @@ icecream
 wordcloud
 matplotlib
 termcolor
+seaborn

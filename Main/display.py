@@ -3,6 +3,7 @@ from wordcloud import WordCloud, STOPWORDS
 import os
 import os.path as osp
 from Preprocess.clean_text import tien_xu_li
+import numpy as np
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -21,8 +22,14 @@ def display_wordcloud(df, n):
     texts = []
     
     for i, row in n_recent_news.iterrows():
-        texts.append(row.text)
-        
+        title = row.title
+        text = row.text
+        if title is np.nan:
+            title = ''
+        if text is np.nan:
+            text = ''
+        texts.append(title + ' ' + text)
+    
     texts = ' '.join(texts)
     texts = tien_xu_li(texts)
     
