@@ -5,9 +5,16 @@
 $ conda create -n dbp python=3.8
 $ conda activate dbp
 $ pip install -r requirements.txt
+```
+### Export PYTHONPATH
+Ubuntu
+```
 $ export PYTHONPATH=$(pwd)
 ```
-
+Windows
+```
+(cmd) set PYTHONPATH=%PYTHONPATH%;c:\PATH\TO\PROJECT
+```
 ## Clean Text Data
 ```
 $ python Preprocess/clean_text.py ${PATH_TO_DATA_FILE} ${OUTPUT_FILE}

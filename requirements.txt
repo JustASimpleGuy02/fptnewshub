@@ -11,3 +11,6 @@ wordcloud
 matplotlib
 termcolor
 seaborn
+htmldate
+streamlit
+plotly

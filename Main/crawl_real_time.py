@@ -2,6 +2,8 @@ import time
 from datetime import datetime
 from bs4 import BeautifulSoup
 import requests
+from Crawler import crawl_news_text
+import json
 
 def crawl_real_time(term:str = "đại học fpt", 
                     start_date: datetime = None, 
@@ -19,7 +21,7 @@ def crawl_real_time(term:str = "đại học fpt",
             url = 'https://www.google.com/search?q="{}"&tbm=nws&tbs=cdr:1,cd_min:{},cd_max:{}&num=100&start={}'.format(
                 "+".join(term.lower().split(" ")),
                 start_date.strftime("%m/%d/%Y") if start_date is not None else "",
-                end_date.strftime("%m/%d/%Y") if start_date is not None else "",
+                end_date.strftime("%m/%d/%Y") if end_date is not None else "",
                 (page - 1) * 100
             )
             
@@ -51,5 +53,11 @@ def crawl_real_time(term:str = "đại học fpt",
         
     return list(set(list_link))
 
-# print(len(crawl_real_time(start_date=datetime(2023, 6, 1),
-#                           end_date=datetime(2023, 6, 8))))
+
+
+if __name__ == '__main__':
+    domain_time_map = json.load(open("Crawler/domain_time_map.json"))
+    recent_news = crawl_real_time(start_date=datetime(2023, 6, 10))
+    for news in recent_news:
+        title, time, text = crawl_news_text(news, domain_time_map)
+        print(text)
