@@ -84,7 +84,7 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
          'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
     }
     try:
-        response = requests.get(link_news, headers=headers)    
+        response = requests.get(link_news, headers=headers, timeout=300)    
     except:
         return "", "", ""
     soup = BeautifulSoup(response.text, "html.parser")
