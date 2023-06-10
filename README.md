@@ -41,3 +41,8 @@ Label lại từ đầu:
 $ rm resume.txt
 $ python Labelling/main.py labelling_text_25_5.csv -r
 ```
+
+## Running Main
+```
+& python Main/main.py
+```
