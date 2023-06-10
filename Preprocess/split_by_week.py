@@ -50,7 +50,7 @@ if __name__ == '__main__':
             continue
         
         # get first and end day of week of the current time
-        week = get_week(time_parsed)
+        _, _, week = get_week(time_parsed)
         
         # store link, date, text of the day in the dictionary with week the corresponding key
         link_meta = {'link': row.link,

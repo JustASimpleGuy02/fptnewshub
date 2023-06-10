@@ -19,7 +19,7 @@ def get_week(dt: datetime):
     start = dt - timedelta(days=dt.weekday())
     end = start + timedelta(days=6)
     week = get_date_str(start) + '_' + get_date_str(end)
-    return week
+    return start, end, week
 
 def pop_pattern(ptn: str, text: str):
     try:
@@ -92,6 +92,8 @@ def clean_datetime(text: str):
     return datetime
 
 def convert2datetime(time):
+    if time is None:
+        return
     try:
         time_parsed = clean_datetime(time)
     except:

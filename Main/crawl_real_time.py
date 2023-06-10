@@ -4,6 +4,12 @@ from bs4 import BeautifulSoup
 import requests
 from Crawler import crawl_news_text
 import json
+from Utils import get_week, convert2datetime
+import pandas as pd
+import os.path as osp
+from tqdm import tqdm
+
+domain_time_map = json.load(open("Crawler/domain_time_map.json"))
 
 def crawl_real_time(term:str = "đại học fpt", 
                     start_date: datetime = None, 
@@ -53,11 +59,24 @@ def crawl_real_time(term:str = "đại học fpt",
         
     return list(set(list_link))
 
+def crawl_by_week(date: datetime):
+    # get week of current date
+    start, end, week = get_week(date)
+    
+    # crawl realtime then save to csv
+    recent_news = crawl_real_time(start_date=start, end_date=(end if end < date else date))
+    print('Number of crawled news:', len(recent_news))
+    
+    df = pd.DataFrame(columns=["link", "title", "time", "time_parsed", "text"])
+    for link in tqdm(recent_news):
+        title, time, text = crawl_news_text(link, domain_time_map)
+        time_parsed = convert2datetime(time)
+        df.loc[len(df.index)] = [link, title, time, time_parsed, text]
 
+    out_path = osp.join('Mentions_By_Week', week+'.csv')
+    df.to_csv(out_path, index=False)
 
 if __name__ == '__main__':
-    domain_time_map = json.load(open("Crawler/domain_time_map.json"))
-    recent_news = crawl_real_time(start_date=datetime(2023, 6, 10))
-    for news in recent_news:
-        title, time, text = crawl_news_text(news, domain_time_map)
-        print(text)
+    now = datetime(2023, 6, 10)
+    crawl_by_week(now)
+    

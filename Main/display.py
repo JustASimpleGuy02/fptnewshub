@@ -15,7 +15,7 @@ def display_wordcloud(df, n):
     """
     Display wordcloud of n recent news
     """
-    stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
+    stopwords = open('Preprocess/stopword.txt', 'r')
     stopwords_list = stopwords.read().split('\n')
     
     n_recent_news = df.tail(n).copy()
