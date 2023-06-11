@@ -3,6 +3,9 @@ from dateutil.parser import parse
 import re
 from pytz import timezone
 imezone = timezone("Asia/Saigon")
+import pytz
+
+now = datetime.now(pytz.utc)
 
 so_vn = ["không", "một", "hai",
          "ba", "tư", "năm", "sáu",
@@ -36,17 +39,14 @@ def clean_datetime(text: str):
     gmt_pattern = r"(?:GMT|UTC)?[+-]\d{2}(?::\d{2})?"
     gmt = re.search(gmt_pattern, text)
 
-    try:
-        """
-        Format: dd/mm/yyyy (or dd-mm-yyyy) hh:mm 
-        """
-        # date_pattern = "[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}"
-        date_pattern = r"\d{1,2}[-/]\d{1,2}[-/]\d{4}"
-        # time_pattern = "[0-9]{2}:[0-9]{2}"
+    # date_pattern = "[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}"
+    date_pattern = r"\d{1,2}[-/]\d{1,2}[-/]\d{4}"  # dd/mm/yyyy (or dd-mm-yyyy) hh:mm
+    date = re.search(date_pattern, text)
+    
+    if date:
         time_pattern = r"\d{1,2}:\d{2}"
         # gmt_pattern = r"GMT[+-]\d{1,2}[:\d{1,2}]*"
 
-        date = re.search(date_pattern, text)
         time = re.search(time_pattern, text)
         # gmt = re.search(gmt_pattern, text)
         
@@ -57,23 +57,20 @@ def clean_datetime(text: str):
         
         if time is None:
             time = ['00:00']
-                    
-    except:
-        """
-        Format: Tháng mm, dd, yyyy
-        """
+
+    elif "tháng" in text:
         month_pattern = r"tháng \d+"
         number_pattern = r"\d+"
-        year_patern = r"\d{4}"
+        year_pattern = r"\d{4}"
         time_pattern = r"\d{1,2}:\d{2}"
         
         for idx, so in enumerate(so_vn):
             text = text.replace(so, str(idx))
             
         time, text = pop_pattern(time_pattern, text)
+        year, text = pop_pattern(year_pattern, text)
         month, text = pop_pattern(month_pattern, text)
         month, _ = pop_pattern(number_pattern, month)
-        year, text = pop_pattern(year_patern, text)
         date, _ = pop_pattern(number_pattern, text)
 
         date = '-'.join([year, month, date])
@@ -82,7 +79,7 @@ def clean_datetime(text: str):
             time = ['00:00']
         else:
             time = [time]
-
+    
     if gmt is None:
         gmt = ['+0700']
         
@@ -92,8 +89,6 @@ def clean_datetime(text: str):
     return datetime
 
 def convert2datetime(time):
-    if time is None:
-        return
     try:
         time_parsed = clean_datetime(time)
     except:
@@ -107,6 +102,9 @@ def convert2datetime(time):
 
 if __name__ == '__main__':
     text = "Tháng 5 ngày 20 năm 2019 8:20 GMT+09:00"
+    # text = "2023-06-05"
+    # text = "26, Tháng 04, 2023 | 07:15"
+    # text = 'Chủ nhật, 23:27 31/01/2021'
     print(str(convert2datetime(text)))
 
     

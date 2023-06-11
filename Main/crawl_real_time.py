@@ -4,10 +4,11 @@ from bs4 import BeautifulSoup
 import requests
 from Crawler import crawl_news_text
 import json
-from Utils import get_week, convert2datetime
+from Utils import get_week, convert2datetime, read_csv
 import pandas as pd
 import os.path as osp
 from tqdm import tqdm
+from icecream import ic
 
 domain_time_map = json.load(open("Crawler/domain_time_map.json"))
 
@@ -64,19 +65,25 @@ def crawl_by_week(date: datetime):
     start, end, week = get_week(date)
     
     # crawl realtime then save to csv
-    recent_news = crawl_real_time(start_date=start, end_date=(end if end < date else date))
+    recent_news = crawl_real_time(start_date=start, end_date=end)
     print('Number of crawled news:', len(recent_news))
     
-    df = pd.DataFrame(columns=["link", "title", "time", "time_parsed", "text"])
+    df = pd.DataFrame(columns=["link", "title", "time", "text"])
     for link in tqdm(recent_news):
         title, time, text = crawl_news_text(link, domain_time_map)
-        time_parsed = convert2datetime(time)
-        df.loc[len(df.index)] = [link, title, time, time_parsed, text]
+        if time == "":
+            time = None
+        # time_parsed = convert2datetime(time) if time is not None else date
+        # ic(time_parsed)
+        df.loc[len(df.index)] = [link, title, time, text]
 
-    out_path = osp.join('Mentions_By_Week', week+'.csv')
-    df.to_csv(out_path, index=False)
+    df['time'].fillna(method='ffill', inplace=True)
+    return df, week
 
 if __name__ == '__main__':
     now = datetime(2023, 6, 10)
-    crawl_by_week(now)
+    df, week = crawl_by_week(now)
+    out_path = osp.join('Mentions_By_Week', week+'.csv')
+    df.to_csv(out_path, index=False)
+
     

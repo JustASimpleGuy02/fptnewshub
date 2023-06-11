@@ -8,14 +8,17 @@ import numpy as np
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 def display_statistics(weeks, mentions):
+    plt.figure( figsize=(20,10))
     plt.plot(weeks, mentions)
+    # plt.title("Mentions Statistics")
     plt.show()
 
 def display_wordcloud(df, n):
     """
     Display wordcloud of n recent news
     """
-    stopwords = open('Preprocess/stopword.txt', 'r')
+    # stopwords = open('Preprocess/stopword.txt', 'r')
+    stopwords = open('Preprocess/vietnamese-stopwords.txt', 'r')
     stopwords_list = stopwords.read().split('\n')
     
     n_recent_news = df.tail(n).copy()
@@ -33,10 +36,18 @@ def display_wordcloud(df, n):
     texts = ' '.join(texts)
     texts = tien_xu_li(texts)
     
-    wordcloud = WordCloud(stopwords=stopwords_list).generate(texts)
-    plt.figure(figsize=(8,5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
+    wordcloud = WordCloud(
+        width=1600,
+        height=800,
+        stopwords=stopwords_list, 
+        background_color='white'
+    ).generate(texts)
+    
+    plt.figure( figsize=(20,10), facecolor='k')
+    plt.imshow(wordcloud)
+    plt.title("Wordcloud")
+    plt.axis("off")
+    plt.tight_layout(pad=0)
     plt.show()
     
     return n_recent_news

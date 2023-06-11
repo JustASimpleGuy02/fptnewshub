@@ -1,9 +1,6 @@
 from get_news import *
 from display import *
 from datetime import datetime
-import pytz
-
-now = datetime.now(pytz.utc)
 
 def main():
     df_news, weeks, mentions = get_news_by_week()

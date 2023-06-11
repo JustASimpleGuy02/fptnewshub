@@ -71,7 +71,8 @@ if __name__ == '__main__':
         if osp.exists(out_path):
             # load csv from out_path
             old_df = read_csv(out_path)
-            old_df['time_parsed']= pd.to_datetime(old_df['time_parsed'])
+            # old_df['time_parsed']= pd.to_datetime(old_df['time_parsed'])
+            old_df['time_parsed']= old_df['time_parsed'].apply(parse)
             # concat 2 dataframes and remove duplicates
             df_links = pd.concat([old_df, df_links]).drop_duplicates()
                         
