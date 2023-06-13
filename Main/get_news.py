@@ -15,8 +15,7 @@ def prettify_week(week: str):
 def get_news_by_week(past_n_week=5):
     csv_files = glob(mentions_dir + '/*.csv')
     df_total = pd.DataFrame(columns=['link', 'time', 'title', 'text'])
-    weeks = []
-    mentions_by_weeks = []
+    week2mention = {}
     
     # read from each csv files
     for fpath in sorted(csv_files)[-past_n_week:]:
@@ -31,15 +30,18 @@ def get_news_by_week(past_n_week=5):
         # accumulate the name and the 
         # number of mentions in each csv file
         week = osp.basename(fpath).split('.')[0]
-        weeks.append(prettify_week(week))
-        mentions_by_weeks.append(len(df))
+        week = prettify_week(week)
+        week2mention[week] = week2mention.get(week, 0) + 1
     
     df_total.reset_index(drop=True, inplace=True)
     df_total.sort_values(by=['time'], ascending=False, inplace = True)
     
-    return df_total, weeks, mentions_by_weeks
+    return df_total, week2mention
 
 def get_recent_news(df, n):    
     n_recent_news = df.head(n).copy()
     return n_recent_news
+
+def update_news(total_df, new_df):
+    pass
     

@@ -11,7 +11,7 @@ import plotly.express as px
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-def display_statistics(weeks, mentions):
+def display_mention_statistics(weeks, mentions):
     plt.figure( figsize=(20,10))
     plt.plot(weeks, mentions)
     plt.title("Mentions Statistics")
