@@ -12,11 +12,12 @@ import plotly.express as px
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 def display_statistics(weeks, mentions):
-    # plt.figure( figsize=(20,10))
-    # plt.title("Mentions Statistics")
-    # plt.show()
-    fig = px.line(weeks, mentions)
-    st.plotly_chart(fig)
+    plt.figure( figsize=(20,10))
+    plt.plot(weeks, mentions)
+    plt.title("Mentions Statistics")
+    plt.show()
+    # fig = px.line(weeks, mentions)
+    # st.plotly_chart(fig)
 
 def display_wordcloud(df_recent, n=10):
     """
@@ -48,14 +49,14 @@ def display_wordcloud(df_recent, n=10):
         background_color='white'
     ).generate(texts)
     
-    st.plotly_chart(wordcloud)
+    # st.plotly_chart(wordcloud)
     
-    # plt.figure( figsize=(20,10), facecolor='k')
-    # plt.imshow(wordcloud)
-    # plt.title("Wordcloud")
-    # plt.axis("off")
-    # plt.tight_layout(pad=0)
-    # plt.show()
+    plt.figure( figsize=(20,10), facecolor='k')
+    plt.imshow(wordcloud)
+    plt.title("Wordcloud")
+    plt.axis("off")
+    plt.tight_layout(pad=0)
+    plt.show()
     
 def display_news(df):
     df.sort_values(by=['time'], ascending=False, inplace=True)
