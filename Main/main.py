@@ -7,7 +7,10 @@ def main():
     # recent_news = get_recent_news()
 
     display_statistics(weeks, mentions)
-    recent_news = display_wordcloud(df_news, 10)
+    
+    recent_news = get_recent_news(df_news, 10)
+    display_wordcloud(recent_news)
+    
     display_news(recent_news)
 
 if __name__ == '__main__':

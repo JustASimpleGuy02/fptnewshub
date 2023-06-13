@@ -35,10 +35,11 @@ def get_news_by_week(past_n_week=5):
         mentions_by_weeks.append(len(df))
     
     df_total.reset_index(drop=True, inplace=True)
+    df_total.sort_values(by=['time'], ascending=False, inplace = True)
     
     return df_total, weeks, mentions_by_weeks
 
-def get_recent_news():
-    # crawl recent news
+def get_recent_news(df, n):    
+    n_recent_news = df.head(n).copy()
+    return n_recent_news
     
-    pass

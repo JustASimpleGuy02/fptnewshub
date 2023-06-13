@@ -76,7 +76,7 @@ if __name__ == '__main__':
             # concat 2 dataframes and remove duplicates
             df_links = pd.concat([old_df, df_links]).drop_duplicates()
                         
-        df_links.sort_values(by=['time_parsed'], ascending=False, inplace = True)
+        df_links.sort_values(by=['time_parsed'], ascending=False, inplace=True)
         df_links.reset_index(drop=True, inplace=True)
 
         df_links.to_csv(out_path, index=False)
