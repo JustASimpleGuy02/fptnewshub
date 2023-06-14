@@ -1,17 +1,21 @@
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud, STOPWORDS
+from wordcloud import WordCloud
 import os
 import os.path as osp
 from Preprocess.clean_text import tien_xu_li
 import numpy as np
-from get_news import get_recent_news
+from get_news import prettify_week
 import streamlit as st
 import plotly.express as px
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-def display_mention_statistics(weeks, mentions):
+def display_mention_statistics(week2mention: dict):
+    # lists = sorted(week2mention.items())
+    weeks, mentions = zip(*week2mention.items())
+    weeks = list(map(prettify_week, weeks))
+    
     plt.figure( figsize=(20,10))
     plt.plot(weeks, mentions)
     plt.title("Mentions Statistics")
@@ -27,7 +31,6 @@ def display_wordcloud(df_recent, n=10):
     stopwords = open('Preprocess/vietnamese-stopwords.txt', 'r')
     stopwords_list = stopwords.read().split('\n')
     
-    n_recent_news = get_recent_news(df_recent, n)
     texts = []
     
     for i, row in df_recent.iterrows():
@@ -64,6 +67,7 @@ def display_news(df):
     for i, row in df.iterrows():
         print('Time:', row.time)
         print('Link:', row.link)
-        print('Title:', row.title)
+        if not isinstance(row.title, float):
+            print('Title:', row.title.strip())
         print()
     

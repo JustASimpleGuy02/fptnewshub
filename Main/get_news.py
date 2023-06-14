@@ -2,8 +2,13 @@ from pathlib import Path
 from Utils import read_csv
 from glob import glob
 import os.path as osp
-
+from crawl_real_time import crawl_by_week
 import pandas as pd
+import pytz
+from datetime import datetime
+from dateutil.parser import parse
+
+now = datetime.now(pytz.utc)
 
 mentions_dir = str(Path(__file__).parent.parent / 'Mentions_By_Week')
 
@@ -30,18 +35,34 @@ def get_news_by_week(past_n_week=5):
         # accumulate the name and the 
         # number of mentions in each csv file
         week = osp.basename(fpath).split('.')[0]
-        week = prettify_week(week)
-        week2mention[week] = week2mention.get(week, 0) + 1
+        # week = prettify_week(week)
+        week2mention[week] = len(df)
+        print(week2mention[week])
     
     df_total.reset_index(drop=True, inplace=True)
-    df_total.sort_values(by=['time'], ascending=False, inplace = True)
+    # df_total.sort_values(by=['time'], ascending=False, inplace = True)
     
     return df_total, week2mention
 
-def get_recent_news(df, n):    
-    n_recent_news = df.head(n).copy()
-    return n_recent_news
+def get_recent_news():    
+    df, week = crawl_by_week(now)
+    return df, week
 
 def update_news(total_df, new_df):
-    pass
+    total_df = pd.concat([total_df, new_df]).drop_duplicates()
+    total_df.sort_values(by=['time'], ascending=False, inplace = True)
+    return total_df
+
+def save_data(news: pd.DataFrame, week: str):
+    out_path = osp.join(mentions_dir, week + '.csv')
     
+    # if out_path exists 
+    if osp.exists(out_path):
+        # load csv from out_path
+        old_df = read_csv(out_path)
+        # old_df['time_parsed']= pd.to_datetime(old_df['time_parsed'])
+        old_df['time_parsed']= old_df['time'].apply(parse)
+        # concat 2 dataframes and remove duplicates
+        news = pd.concat([old_df, news]).drop_duplicates()
+    
+    news.to_csv(out_path, index=False)
