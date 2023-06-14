@@ -27,5 +27,5 @@ $ python Preprocess/split_by_week.py Data/news_text_27_5.csv Mentions_By_Week
 
 ## Running Main
 ```
-& python Main/main.py
+$ python Main/main.py
 ```
