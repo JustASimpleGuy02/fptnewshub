@@ -15,7 +15,7 @@ def display_mention_statistics(week2mention: dict):
     # lists = sorted(week2mention.items())
     weeks, mentions = zip(*week2mention.items())
     weeks = list(map(prettify_week, weeks))
-    
+    print(week2mention)
     plt.figure( figsize=(20,10))
     plt.plot(weeks, mentions)
     plt.title("Mentions Statistics")
@@ -67,7 +67,7 @@ def display_news(df):
     for i, row in df.iterrows():
         print('Time:', row.time)
         print('Link:', row.link)
-        if not isinstance(row.title, float):
+        if not isinstance(row.title, float) and len(row.title) > 0:
             print('Title:', row.title.strip())
         print()
     

@@ -81,9 +81,13 @@ def crawl_by_week(date: datetime):
     return df, week
 
 if __name__ == '__main__':
-    now = datetime(2023, 6, 10)
-    df, week = crawl_by_week(now)
-    out_path = osp.join('Mentions_By_Week', week+'.csv')
-    df.to_csv(out_path, index=False)
+    # now = datetime(2023, 6, 1)
+    # df, week = crawl_by_week(now)
+    # out_path = osp.join('Mentions_By_Week', week+'.csv')
+    # df.to_csv(out_path, index=False)
+
+
+    print(len(crawl_real_time(start_date=datetime(2023,6,1), \
+                                    end_date=datetime(2023,6,10))))
 
     
