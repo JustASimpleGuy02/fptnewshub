@@ -13,8 +13,8 @@ def main():
         # one thread
         recent_news, current_week = get_recent_news()
         
-        current_week = '2023-06-12_2023-06-18'
-        recent_news = pd.read_csv(f'Mentions_By_Week/{current_week}.csv')
+        # current_week = '2023-06-12_2023-06-18'
+        # recent_news = pd.read_csv(f'Mentions_By_Week/{current_week}.csv')
         
         save_data(recent_news, current_week)
         
