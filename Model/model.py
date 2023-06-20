@@ -50,15 +50,18 @@ def sentiment(row):
     
     neg = []
     for sentence in temp_data:
-        if sentence != "":
-            try:
-                neg.append(sentiment(sentence))
-            except:
-                continue
-        else:
-            neg.append(0)
-    return 0
-
+    if sentence != "":
+        try:
+        neg.append(sentiment(sentence))
+        except:
+        neg.append([0,0,0])
+    else:
+        neg.append([0,0,0])
+    neg = np.array(neg)
+    res = np.sum(neg, 0)
+    temp_data_length = len(temp_data)  # Obtain the length of temp_data
+    res = np.divide(res, temp_data_length)  # Perform division with the length
+    return res
 
 
 
