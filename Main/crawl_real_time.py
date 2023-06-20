@@ -68,14 +68,14 @@ def crawl_by_week(date: datetime):
     recent_news = crawl_real_time(start_date=start, end_date=end)
     print('Number of crawled news:', len(recent_news))
     
-    df = pd.DataFrame(columns=["link", "title", "time", "text"])
+    df = pd.DataFrame(columns=["link", "title", "time", "text", "sentiment"])
     for link in tqdm(recent_news):
         title, time, text = crawl_news_text(link, domain_time_map)
         if time == "":
             time = None
         # time_parsed = convert2datetime(time) if time is not None else date
         # ic(time_parsed)
-        df.loc[len(df.index)] = [link, title, time, text]
+        df.loc[len(df.index)] = [link, title, time, text, ""]
 
     df['time'].fillna(method='ffill', inplace=True)
     return df, week

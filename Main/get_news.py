@@ -20,7 +20,7 @@ def prettify_week(week: str):
 
 def get_news_by_week(past_n_week=5):
     csv_files = glob(mentions_dir + '/*.csv')
-    df_total = pd.DataFrame(columns=['link', 'time', 'title', 'text'])
+    df_total = pd.DataFrame(columns=['link', 'time', 'title', 'text', 'sentiment'])
     week2mention = {}
     
     # read from each csv files

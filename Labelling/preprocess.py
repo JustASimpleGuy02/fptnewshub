@@ -16,6 +16,7 @@ if __name__ == '__main__':
     
     #Tạo file csv chứa text và cột dữ liệu có negative hay không
     df = pd.read_csv(ifile)
-    new_df = pd.DataFrame({'Text': df['Cleaned_Content'], 'Negative': ''})
+    # text = ' '.join([df['title'], df['text']])
+    new_df = pd.DataFrame({'Text': df['title'] + ' ' + df['text'], 'Negative': ''})
     
     new_df.to_csv(ofile)

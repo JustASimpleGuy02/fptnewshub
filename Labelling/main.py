@@ -35,6 +35,7 @@ if __name__ == '__main__':
     
     # Read the input CSV file
     df = read_csv(ifile)
+    df = df[df['Text'].notna()]
 
     # Check if there is a resume index file
     resume_index = 0
@@ -65,13 +66,14 @@ if __name__ == '__main__':
         
         #Điền xem thông tin có nội dung tiêu cực hay không (1 là có và 0 là không)
         while True:
-            negative = input("Enter the value for 'Negative' field (0 or 1): ")
+            negative = input(
+            "Enter the value for sentiment field: \n  0: Positive\n  1: Neutral\n  2: Negative\nYour choice: ")
 
             # Validate the input
-            if negative in ['0', '1']:
+            if negative in ['0', '1', '2']:
                 break
             else:
-                print("Invalid input. Please enter 0 or 1.")
+                print("Invalid input. Please enter 0, 1, or 2.")
 
         # Update the 'Negative' field in the DataFrame
         df.at[index, 'Negative'] = negative

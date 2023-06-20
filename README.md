@@ -29,3 +29,22 @@ $ python Preprocess/split_by_week.py Data/news_text_27_5.csv Mentions_By_Week
 ```
 $ python Main/main.py
 ```
+
+## Labelling Text
+Thay đổi trong file Labelling/label.sh, có dạng:
+```
+python Labelling/preprocess.py ${PATH_TO_DATA_FILE} ${OUTPUT_FILE}
+python Labelling/main.py ${PATH_TO_DATA_FILE} ${RESUME_INDEX_FILE}
+```
+
+Example: 
+``` 
+python Labelling/preprocess.py Mentions_By_Week/2023-06-19_2023-06-25.csv labelling_text_latest.csv
+python Labelling/main.py labelling_text_latest.csv resume.txt
+$ ./Labelling/label.sh
+```
+Label lại từ đầu:
+``` 
+$ rm resume.txt
+$ python Labelling/main.py labelling_text_latest.csv -r
+```

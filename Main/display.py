@@ -8,9 +8,17 @@ from get_news import prettify_week
 import streamlit as st
 import plotly.express as px
 from Model.model import sentiment
+from termcolor import cprint
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
+
+text2color = {
+    "Positive": "green",
+    "Neutral": "yellow",
+    "Negative": "red"
+}
+
 
 def display_mention_statistics(week2mention: dict):
     # lists = sorted(week2mention.items())
@@ -68,8 +76,18 @@ def display_news(df):
     for i, row in df.iterrows():
         print('Time:', row.time)
         print('Link:', row.link)
+        
         if not isinstance(row.title, float) and len(row.title) > 0:
             print('Title:', row.title.strip())
-        print('Sentiment:', sentiment(row))
+        
+        if isinstance(row.text, float):
+            print()
+            continue
+        
+        stm = sentiment(row)
+        cprint(f'Sentiment: {stm}', text2color[stm])
+                
         print()
+        
+    
     
