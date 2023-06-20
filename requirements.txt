@@ -14,3 +14,5 @@ seaborn
 htmldate
 streamlit
 plotly
+transformers
+torch==1.13.1

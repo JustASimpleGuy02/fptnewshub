@@ -11,10 +11,10 @@ def main():
     while True:
         # get most recent news and save data
         # one thread
-        recent_news, current_week = get_recent_news()
+        # recent_news, current_week = get_recent_news()
         
-        # current_week = '2023-06-12_2023-06-18'
-        # recent_news = pd.read_csv(f'Mentions_By_Week/{current_week}.csv')
+        current_week = '2023-06-12_2023-06-18'
+        recent_news = pd.read_csv(f'Mentions_By_Week/{current_week}.csv')
         
         save_data(recent_news, current_week)
         
@@ -30,7 +30,7 @@ def main():
         display_wordcloud(recent_news)
 
         # display details about news   
-        display_news(recent_news)
+        display_news(recent_news) 
         
         time.sleep(300)
 

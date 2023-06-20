@@ -7,6 +7,7 @@ import numpy as np
 from get_news import prettify_week
 import streamlit as st
 import plotly.express as px
+from Model.model import sentiment
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -69,5 +70,6 @@ def display_news(df):
         print('Link:', row.link)
         if not isinstance(row.title, float) and len(row.title) > 0:
             print('Title:', row.title.strip())
+        print('Sentiment:', sentiment(row))
         print()
     
