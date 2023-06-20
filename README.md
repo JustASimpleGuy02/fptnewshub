@@ -40,7 +40,8 @@ python Labelling/preprocess.py Mentions_By_Week/2023-06-19_2023-06-25.csv labell
 python Labelling/main.py labelling_text_latest.csv resume.txt
 $ ./Labelling/label.sh
 ```
-File resume.txt sẽ chứa STT của link cần label hiện tại để tiếp tục label
+File resume.txt sẽ được xuất ra và chứa STT của link cần label hiện tại để tiếp tục label
+
 Label lại từ đầu:
 ``` 
 $ rm resume.txt
