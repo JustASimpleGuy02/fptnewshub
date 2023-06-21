@@ -28,7 +28,7 @@ $ python Main/main.py
 ```
 
 ## Labelling Text
-Thay đổi trong file Labelling/label.sh, có dạng:
+Thay đổi cá đường dẫn trong file Labelling/label.sh, có dạng:
 ```
 python Labelling/preprocess.py ${PATH_TO_DATA_FILE} ${OUTPUT_FILE}
 python Labelling/main.py ${PATH_TO_DATA_FILE} ${RESUME_INDEX_FILE}
