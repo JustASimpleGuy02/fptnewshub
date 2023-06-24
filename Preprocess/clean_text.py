@@ -8,9 +8,9 @@ from icecream import ic
 import os
 import os.path as osp
 
-# dir_path = os.path.dirname(os.path.realpath(__file__))
-# stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
-# stopwords_list = stopwords.read().split('\n')
+dir_path = os.path.dirname(os.path.realpath(__file__))
+stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r', encoding='UTF-8')
+stopwords_list = stopwords.read().split('\n')
 
 bang_nguyen_am= [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
@@ -131,32 +131,22 @@ def chuan_hoa_cau(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-with open('stopword.txt', 'r', encoding = 'utf-8') as f:
-    stopwords_list = f.read().split('\n')
-
 def bo_stopwords(text):
     text = text.split(' ')
     text = [t for t in text if t not in stopwords_list]
     return ' '.join(text)
 
-# def bo_stopword(text):
-#     # stopwords_list = open('stopword.txt', 'r').read().split('\n')
-#     text = text.split()
-#     non_sw_text = []
-#     for word in text:
-#         if word not in stopwords_list:
-#             non_sw_text.append(word)
-#     result = ' '.join([str(item) for item in non_sw_text])
-#     return result
+def tien_xu_li(text, no_stwrds: bool=True):
+    text = chuan_hoa_unicode(text)
+    text = chuan_hoa_dau_cau_tieng_viet(text)
+    text = tach_tu_tieng_viet(text)
+    text = chuyen_chu_thuong(text)
+    text = chuan_hoa_cau(text)
 
-def tien_xu_li(text):
-	text = chuan_hoa_unicode(text)
-	text = chuan_hoa_dau_cau_tieng_viet(text)
-	text = tach_tu_tieng_viet(text)
-	text = chuyen_chu_thuong(text)
-	text = chuan_hoa_cau(text)
-# 	text = bo_stopword(text)
-	return text
+    if no_stwrds:
+        text = bo_stopwords(text)
+
+    return text
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Clean text from csv file")
