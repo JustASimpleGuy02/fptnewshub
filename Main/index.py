@@ -8,87 +8,44 @@ from bs4 import BeautifulSoup as bs
 import numpy as np
 import PIL
 from urllib.request import urlopen
+from get_news import *
+from display import *
+from datetime import datetime
 
+st.set_page_config(page_title='FPT News Hub')
+st.title('Welcome to FPT News Hub 📈')
+st.subheader('Created by Group 3 - DBP391 Project')
 
-# def generate_excel_download_link(df):
-#     # Credit Excel: https://discuss.streamlit.io/t/how-to-add-a-download-excel-csv-function-to-a-button/4474/5
-#     towrite = BytesIO()
-#     df.to_excel(towrite, encoding="utf-8", index=False, header=True)  # write to BytesIO buffer
-#     towrite.seek(0)  # reset pointer
-#     b64 = base64.b64encode(towrite.read()).decode()
-#     href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="data_download.xlsx">Download Excel File</a>'
-#     return st.markdown(href, unsafe_allow_html=True)
+total_news, week2mentions = get_news_by_week()
+recent_news, current_week = get_recent_news()
 
-# def generate_html_download_link(fig):
-#     # Credit Plotly: https://discuss.streamlit.io/t/download-plotly-plot-as-html/4426/2
-#     towrite = StringIO()
-#     fig.write_html(towrite, include_plotlyjs="cdn")
-#     towrite = BytesIO(towrite.getvalue().encode())
-#     b64 = base64.b64encode(towrite.read()).decode()
-#     href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="plot.html">Download Plot</a>'
-#     return st.markdown(href, unsafe_allow_html=True)
+save_data(recent_news, current_week)
 
+# update current news to total news
+total_news = update_news(recent_news, total_news)
+week2mentions[current_week] = week2mentions.get(current_week, 0) + len(recent_news)
 
-st.set_page_config(page_title='CSV Plotter')
-st.title('CSV Plotter 📈')
-st.subheader('Feed me with your csv file')
+# display number of mentions in line graph by week
+mention_fig = display_mention_statistics(week2mentions)
+if mention_fig is not None:
+    st.plotly_chart(mention_fig)
+else:
+    st.write("Cannot plot mention_fig")
 
-col1, col2 = st.columns(2)
+# display most recent news' word cloud
+recent_news = total_news.head(20).copy()
+wordcloud_fig = display_wordcloud(recent_news)
+if wordcloud_fig is not None:
+    st.plotly_chart(wordcloud_fig)
+else:
+    st.write("Cannot plot Wordcloud")
 
-with col1:
-    uploaded_file = st.file_uploader('Choose a csv file', type='csv')
-    if uploaded_file:
-        st.markdown('---')
-        df = pd.read_csv(uploaded_file, index_col=False)
-        st.dataframe(df.head())
-        groupby_column = st.selectbox(
-            'What are you?',
-            ('Male', 'Female', 'Email', 'Other'),
-        )
-        st.write('You are *' + groupby_column + '* :sunglasses:')
-
-    # # -- GROUP DATAFRAME
-    # output_columns = ['Sales', 'Profit']
-    # df_grouped = df.groupby(by=[groupby_column], as_index=False)[output_columns].sum()
-
-    # # -- PLOT DATAFRAME
-    # fig = px.bar(
-    #     df_grouped,
-    #     x=groupby_column,
-    #     y='Sales',
-    #     color='Profit',
-    #     color_continuous_scale=['red', 'yellow', 'green'],
-    #     template='plotly_white',
-    #     title=f'<b>Sales & Profit by {groupby_column}</b>'
-    # )
-    # st.plotly_chart(fig)
-
-    # -- DOWNLOAD SECTION
-    # st.subheader('Downloads:')
-    # generate_excel_download_link(df)
-    # generate_html_download_link(fig)
-
-with col2:
-    uploaded_link = st.text_input('Enter the html link:', placeholder='Enter link here')
-    if uploaded_link:
-        try:
-            resp = rq.get(uploaded_link)
-            if resp.status_code:
-                soup = bs(resp.content, features='lxml')
-                tags = soup.findAll('img')
-                imgs_link = [img['src'] for img in tags if img['src'][-3:] in ['jpg', 'png']]
-                if len(imgs_link) == 0:
-                    st.write('No png/jpg images found on this website!')
-                else:
-                    for img_link in imgs_link:
-                        img = np.array(PIL.Image.open(urlopen(img_link)))
-                        if img.shape[-1] == 3:
-                            st.image(img)
-                            break
-        except:
-            st.write("Incorrect html link, or this website cannot be crawled!")
-    uploaded_img = st.file_uploader('Choose a image file', type=['png', 'jpg'])
-    if uploaded_img:
-        st.image(uploaded_img)
-
-
+# display details about news
+st.divider()
+for _, row in recent_news.iterrows():
+    p = st.info
+    st.write('Time: ' + str(row.time))
+    st.write('Link: ' + row.link)
+    if not isinstance(row.title, float) and len(row.title) > 0:
+        st.write('Title: ' + str(row.title).strip())
+    st.divider()

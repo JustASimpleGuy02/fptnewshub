@@ -31,6 +31,8 @@ if __name__ == "__main__":
     # df["Negative"] = df["Negative"].astype(int)
     
     for idx, row in df.iterrows():
+        # if idx < 200:
+        #     continue
         if str(row['Negative']) == 'nan':
             cprint(f"Line: {idx + 1}", 'red')
             cprint(f"Title: {row['Title']}", 'green')
