@@ -28,7 +28,7 @@ if __name__ == "__main__":
     input_path = FLAGS.input_path
     
     df = pd.read_csv(input_path, index_col=0)
-    df["Negative"] = df["Negative"].astype(int)
+    # df["Negative"] = df["Negative"].astype(int)
     
     for idx, row in df.iterrows():
         if str(row['Negative']) == 'nan':
