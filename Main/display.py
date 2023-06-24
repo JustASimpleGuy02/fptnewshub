@@ -37,7 +37,7 @@ def display_wordcloud(df_recent, n=10):
     Display wordcloud of n recent news
     """
     # stopwords = open('Preprocess/stopword.txt', 'r')
-    stopwords = open('Preprocess/vietnamese-stopwords.txt', 'r')
+    stopwords = open('Preprocess/vietnamese-stopwords.txt', 'r', encoding='UTF-8')
     stopwords_list = stopwords.read().split('\n')
     
     texts = []

@@ -9,7 +9,7 @@ import os
 import os.path as osp
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r')
+stopwords = open(osp.join(dir_path, 'stopword.txt'), 'r', encoding='UTF-8')
 stopwords_list = stopwords.read().split('\n')
 
 bang_nguyen_am= [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
