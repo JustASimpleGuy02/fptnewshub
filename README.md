@@ -28,22 +28,10 @@ $ python Main/main.py
 ```
 
 ## Labelling Text
-Thay đổi cá đường dẫn trong file Labelling/label.sh, có dạng:
-```
-python Labelling/preprocess.py ${PATH_TO_DATA_FILE} ${OUTPUT_FILE}
-python Labelling/main.py ${PATH_TO_DATA_FILE} ${RESUME_INDEX_FILE}
-```
-
-Example: 
+Code for Ubuntu, check the path when run in Windows
+Change the path to process file
+Example:
 ``` 
-python Labelling/preprocess.py Mentions_By_Week/2023-06-19_2023-06-25.csv labelling_text_latest.csv
-python Labelling/main.py labelling_text_latest.csv resume.txt
-$ ./Labelling/label.sh
-```
-File resume.txt sẽ được xuất ra và chứa STT của link cần label hiện tại để tiếp tục label
-
-Label lại từ đầu:
-``` 
-$ rm resume.txt
-$ python Labelling/main.py labelling_text_latest.csv -r
+python Labelling/new_preprocess.py Mentions_By_Week/2023-06-19_2023-06-25.csv result.csv
+python Labelling/label.py result.csv
 ```
