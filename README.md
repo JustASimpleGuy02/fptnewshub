@@ -26,6 +26,10 @@ Hoặc chạy lệnh sau với các file data đã được trích text từ cá
 ```
 $ python Main/main.py
 ```
+with Streamlit:
+```
+$ streamlit run Main/index.py
+```
 
 ## Labelling Text
 Code for Ubuntu, check the path when run in Windows

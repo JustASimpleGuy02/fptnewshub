@@ -24,13 +24,15 @@ def display_mention_statistics(week2mention: dict):
     # lists = sorted(week2mention.items())
     weeks, mentions = zip(*week2mention.items())
     weeks = list(map(prettify_week, weeks))
-    print(week2mention)
-    plt.figure( figsize=(20,10))
+    # fig = plt.figure( figsize=(20,10))
+    fig = plt.figure( figsize=(12, 6))
+
     plt.plot(weeks, mentions)
     plt.title("Mentions Statistics")
-    plt.show()
+    # plt.show()
     # fig = px.line(weeks, mentions)
     # st.plotly_chart(fig)
+    return fig
 
 def display_wordcloud(df_recent, n=10):
     """
@@ -63,12 +65,13 @@ def display_wordcloud(df_recent, n=10):
     
     # st.plotly_chart(wordcloud)
     
-    plt.figure( figsize=(20,10), facecolor='k')
+    fig = plt.figure( figsize=(20,10), facecolor='k')
     plt.imshow(wordcloud)
     plt.title("Wordcloud")
     plt.axis("off")
     plt.tight_layout(pad=0)
-    plt.show()
+    # plt.show()
+    return fig
     
 def display_news(df):
     df.sort_values(by=['time'], ascending=False, inplace=True)

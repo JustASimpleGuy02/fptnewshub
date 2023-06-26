@@ -11,10 +11,12 @@ def read_csv(fpath: str):
                      lineterminator='\n',
                      )
     
-    remove_col = 'Unnamed: 0'
-
-    if remove_col in df.columns.to_list():
-        df.drop(columns=remove_col, inplace=True)
+    for column in df.columns.to_list():
+        if 'Unnamed' in column:
+            df.drop(columns=column, inplace=True)
+    
+    if 'link' in df.columns.to_list():
+        df.drop_duplicates(subset=['link'], inplace=True)
         
     return df
 
