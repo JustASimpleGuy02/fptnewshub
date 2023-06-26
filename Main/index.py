@@ -22,12 +22,12 @@ def main():
     # recent_news, current_week = get_recent_news()
     # save_data(recent_news, current_week)
     
-    current_week = '2023-06-19_2023-06-25'
-    recent_news = pd.read_csv(f'Mentions_By_Week/{current_week}.csv')
+    # current_week = '2023-06-19_2023-06-25'
+    # recent_news = pd.read_csv(f'Mentions_By_Week/{current_week}.csv')
 
     # update current news to total news
-    total_news = update_news(recent_news, total_news)
-    week2mentions[current_week] = week2mentions.get(current_week, 0) + len(recent_news)
+    # total_news = update_news(recent_news, total_news)
+    # week2mentions[current_week] = week2mentions.get(current_week, 0) + len(recent_news)
 
     # display number of mentions in line graph by week
     mention_fig = display_mention_statistics(week2mentions)

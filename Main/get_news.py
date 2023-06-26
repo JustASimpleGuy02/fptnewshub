@@ -40,7 +40,7 @@ def get_news_by_week(past_n_week=5):
         week2mention[week] = len(df)
     
     df_total.reset_index(drop=True, inplace=True)
-    # df_total.sort_values(by=['time'], ascending=False, inplace = True)
+    df_total.sort_values(by=['time'], ascending=False, inplace = True)
     
     return df_total, week2mention
 

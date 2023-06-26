@@ -24,11 +24,8 @@ Hoặc chạy lệnh sau với các file data đã được trích text từ cá
 
 ## Running Main
 ```
-$ python Main/main.py
-```
-with Streamlit:
-```
 $ streamlit run Main/index.py
+$ python Main/crawl.py
 ```
 
 ## Labelling Text
