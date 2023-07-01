@@ -9,6 +9,7 @@ import streamlit as st
 import plotly.express as px
 from Model.model import sentiment
 from termcolor import cprint
+import pandas as pd
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -73,10 +74,10 @@ def display_wordcloud(df_recent, n=10):
     # plt.show()
     return fig
     
-def display_news(df):
+def display_news(df: pd.DataFrame):
     df.sort_values(by=['time'], ascending=False, inplace=True)
     
-    for i, row in df.iterrows():
+    for _, row in df.iterrows():
         print('Time:', row.time)
         print('Link:', row.link)
         

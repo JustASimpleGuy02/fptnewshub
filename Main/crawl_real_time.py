@@ -61,32 +61,36 @@ def crawl_real_time(term:str = "đại học fpt",
     return list(set(list_link))
 
 def crawl_by_week(date: datetime):
+    """Crawl all the news in the week including date
+    
+
+    Args:
+        date (datetime): input date
+
+    Returns:
+        df: DataFrame of all the crawled news in the week with their attributes
+        week: the week including date
+    """
     # get week of current date
     start, end, week = get_week(date)
     
-    # crawl realtime then save to csv
+    # crawl articles with the time in range start date, end date
     recent_news = crawl_real_time(start_date=start, end_date=end)
     print('Number of crawled news:', len(recent_news))
     
+    # crawl important attributes from each news
     df = pd.DataFrame(columns=["link", "title", "time", "text", "sentiment"])
     for link in tqdm(recent_news):
         title, time, text = crawl_news_text(link, domain_time_map)
         if time == "":
             time = None
-        # time_parsed = convert2datetime(time) if time is not None else date
-        # ic(time_parsed)
         df.loc[len(df.index)] = [link, title, time, text, ""]
 
+    # fill time of articles which have invalid time
     df['time'].fillna(method='ffill', inplace=True)
     return df, week
 
 if __name__ == '__main__':
-    # now = datetime(2023, 6, 1)
-    # df, week = crawl_by_week(now)
-    # out_path = osp.join('Mentions_By_Week', week+'.csv')
-    # df.to_csv(out_path, index=False)
-
-
     print(len(crawl_real_time(start_date=datetime(2023,6,1), \
                                     end_date=datetime(2023,6,10))))
 
