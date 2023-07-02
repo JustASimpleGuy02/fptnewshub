@@ -4,12 +4,13 @@ import os
 import os.path as osp
 from Preprocess.clean_text import tien_xu_li
 import numpy as np
-from get_news import prettify_week
+from Main.extract_news import prettify_week
 import streamlit as st
 import plotly.express as px
 from Model.model import sentiment
 from termcolor import cprint
 import pandas as pd
+from PIL import Image
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -32,8 +33,7 @@ def display_mention_statistics(week2mention: dict):
     plt.title("Mentions Statistics")
     # plt.show()
     # fig = px.line(weeks, mentions)
-    # st.plotly_chart(fig)
-    return fig
+    st.plotly_chart(fig)
 
 def display_wordcloud(df_recent, n=10):
     """
@@ -45,7 +45,7 @@ def display_wordcloud(df_recent, n=10):
     
     texts = []
     
-    for i, row in df_recent.iterrows():
+    for _, row in df_recent.iterrows():
         title = row.title
         text = row.text
         if title is np.nan:
@@ -63,35 +63,48 @@ def display_wordcloud(df_recent, n=10):
         stopwords=stopwords_list, 
         background_color='white'
     ).generate(texts)
-    
-    # st.plotly_chart(wordcloud)
-    
+        
     fig = plt.figure( figsize=(20,10), facecolor='k')
     plt.imshow(wordcloud)
     plt.title("Wordcloud")
     plt.axis("off")
     plt.tight_layout(pad=0)
-    # plt.show()
-    return fig
+    plt.savefig("/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png")
+    image = Image.open('/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png')
+    st.image(image, caption='Wordcloud')
     
-def display_news(df: pd.DataFrame):
+def print_news(df: pd.DataFrame, debug=False):
     df.sort_values(by=['time'], ascending=False, inplace=True)
     
     for _, row in df.iterrows():
         print('Time:', row.time)
         print('Link:', row.link)
         
-        if not isinstance(row.title, float) and len(row.title) > 0:
-            print('Title:', row.title.strip())
+        title = str(row.title).strip()
+        if not isinstance(title, float) and len(title) > 0:
+            print('Title: ' + title)
         
         if isinstance(row.text, float):
             print()
             continue
         
-        stm = sentiment(row)
-        cprint(f'Sentiment: {stm}', text2color[stm])
+        if debug:
+            stm = sentiment(row)
+            cprint(f'Sentiment: {stm}', text2color[stm])
                 
         print()
         
+        
+def display_news(recent_news: pd.DataFrame):
+    st.divider()
+    for _, row in recent_news.iterrows():
+        st.write('Time: ' + str(row.time))
+        st.write('Link: ' + row.link)
+        
+        title = str(row.title).strip()
+        if not isinstance(title, float) and len(title) > 0:
+            st.write('Title: ' + title)
+            
+        st.divider()
     
     

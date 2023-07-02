@@ -29,14 +29,9 @@ def count_link_in_csv_dir(csv_dir):
         
     return count
 
-
-# def merge_csv(fpath1, fpath2, fpath_out):
-#     df1 = read_csv(fpath1)
-#     df2 = read_csv(fpath1)
-    
-#     df_links = pd.concat([df1, df2]).drop_duplicates()
-
 def clean_df(df):
+    df = df[df['time'].notna()]
     df = df[df['title'].notna()]
     df = df.loc[~df["title"].str.contains("Error")]  # remove error news
+    df.reset_index(drop=True, inplace=True)
     return df
