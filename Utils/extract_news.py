@@ -5,7 +5,6 @@ import pandas as pd
 from dateutil.parser import parse
 from icecream import ic
 from .utils import clean_df
-from .crawl_utils import crawl_by_week
 
 dir_name = 'Mentions_By_Week'
 mentions_dir = str(Path(__file__).parent.parent / dir_name)

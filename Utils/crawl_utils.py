@@ -9,7 +9,12 @@ import pandas as pd
 import os.path as osp
 from tqdm import tqdm
 from icecream import ic
+import pytz
+from .utils import clean_df
+from .extract_news import mentions_dir
 
+# now = datetime.now(pytz.utc) - timedelta(days=7)
+now = datetime.now(pytz.utc) 
 domain_time_map = json.load(open("Crawler/domain_time_map.json"))
 
 def crawl_real_time(term:str = "đại học fpt", 
@@ -89,6 +94,52 @@ def crawl_by_week(date: datetime):
     # fill time of articles which have invalid time
     df['time'].fillna(method='ffill', inplace=True)
     return df, week
+
+def get_recent_news():    
+    """Crawl the latest news and remove news with some preprocess
+
+    Returns:
+        df: DataFrame of news with their attributes
+        week: week including the news
+    """
+    df, week = crawl_by_week(now)
+    df = clean_df(df)
+    return df, week
+
+def update_news(total_df, new_df):
+    total_df = pd.concat([total_df, new_df]).drop_duplicates()
+    total_df.sort_values(by=['time'], ascending=False, inplace = True)
+    return total_df
+
+def save_data(news: pd.DataFrame, week: str):
+    """Save latest articles to database
+
+    Args:
+        news (pd.DataFrame): DataFrame including news to save
+        week (str): the week of the saved news
+        
+    Returns:
+        news: DataFrame of all the news in week
+    """
+    out_path = osp.join(mentions_dir, week + '.csv')
+    
+    # if out_path exists 
+    if osp.exists(out_path):
+        # load csv from out_path
+        old_df = pd.read_csv(out_path)
+        old_df = old_df[old_df['time'].notna()]
+        # old_df['time_parsed']= old_df['time'].apply(parse)
+        
+        # concat 2 dataframes and remove duplicates
+        news = pd.concat([old_df, news]).drop_duplicates()
+
+    # Sort all the news by time
+    news.sort_values(by=['time'], ascending=False, inplace = True)    
+    
+    news.to_csv(out_path, index=False)
+    print(f"Total number of news in week {week}:", len(news))
+        
+    return news
 
 if __name__ == '__main__':
     print(len(crawl_real_time(start_date=datetime(2023,6,1), \
