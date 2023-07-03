@@ -1,7 +1,6 @@
 import streamlit as st  # pip install streamlit
 from icecream import ic
-from Main.extract_news import *
-from display import *
+from Utils import *
 
 def main():
     st.set_page_config(page_title='FPT News Hub')

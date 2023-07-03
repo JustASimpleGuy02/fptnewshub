@@ -4,7 +4,7 @@ import os
 import os.path as osp
 from Preprocess.clean_text import tien_xu_li
 import numpy as np
-from Main.extract_news import prettify_week
+from Utils.extract_news import prettify_week
 import streamlit as st
 import plotly.express as px
 from Model.model import sentiment

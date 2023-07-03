@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 from Crawler import crawl_news_text
 import json
-from Utils import get_week, convert2datetime, read_csv
+from .date import get_week
 import pandas as pd
 import os.path as osp
 from tqdm import tqdm

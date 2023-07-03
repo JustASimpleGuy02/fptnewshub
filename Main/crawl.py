@@ -1,7 +1,6 @@
-from Main.extract_news import *
-from display import *
 import time
 import argparse
+from Utils import *
 
 # now = datetime.now(pytz.utc) - timedelta(days=7)
 now = datetime.now(pytz.utc) 
