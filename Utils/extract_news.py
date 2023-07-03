@@ -41,7 +41,6 @@ def get_news_by_week(past_n_week=5, n_recent=20):
     # read from each csv files of the past weeks
     for fpath in sorted(csv_files)[:-(past_n_week+1):-1]:  
         week = osp.basename(fpath).split('.')[0]
-        ic(week)
         start_week, end_week = week.split('_')
         
         # read and preprocess

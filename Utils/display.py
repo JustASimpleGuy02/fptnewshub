@@ -17,13 +17,18 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 text2color = {
     "Positive": "green",
-    "Neutral": "yellow",
+    "Neutral": "orange",
     "Negative": "red"
 }
 
+def display_headings():
+    st.set_page_config(page_title='FPT News Hub')
+    st.title('Welcome to FPT News Hub 📈')
+    st.subheader('Created by Group 3 - DBP391 Project')
+
 
 def display_mention_statistics(week2mention: dict):
-    # lists = sorted(week2mention.items())
+    week2mention = dict(sorted(week2mention.items()))
     weeks, mentions = zip(*week2mention.items())
     weeks = list(map(prettify_week, weeks))
     # fig = plt.figure( figsize=(20,10))
@@ -31,10 +36,13 @@ def display_mention_statistics(week2mention: dict):
 
     plt.plot(weeks, mentions)
     plt.title("Mentions Statistics")
-    # plt.show()
-    # fig = px.line(weeks, mentions)
-    st.plotly_chart(fig)
+    
+    plt.show()
+    st.pyplot(fig)
+    
+    st.divider()
 
+        
 def display_wordcloud(df_recent, n=10):
     """
     Display wordcloud of n recent news
@@ -62,18 +70,26 @@ def display_wordcloud(df_recent, n=10):
         height=800,
         stopwords=stopwords_list, 
         background_color='white'
-    ).generate(texts)
+    )
+    wordcloud.generate(texts)
         
     fig = plt.figure( figsize=(20,10), facecolor='k')
     plt.imshow(wordcloud)
     plt.title("Wordcloud")
     plt.axis("off")
     plt.tight_layout(pad=0)
-    plt.savefig("/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png")
-    image = Image.open('/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png')
-    st.image(image, caption='Wordcloud')
     
-def print_news(df: pd.DataFrame, debug=False):
+    # plt.savefig("/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png")
+    # image = Image.open('/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png')
+    # st.image(image, caption='Wordcloud')
+    
+    plt.show()
+    st.pyplot(fig)
+    
+    st.divider()
+    
+
+def plt_display_news(df: pd.DataFrame):
     df.sort_values(by=['time'], ascending=False, inplace=True)
     
     for _, row in df.iterrows():
@@ -88,15 +104,13 @@ def print_news(df: pd.DataFrame, debug=False):
             print()
             continue
         
-        if debug:
-            stm = sentiment(row)
-            cprint(f'Sentiment: {stm}', text2color[stm])
+        stm = sentiment(row)
+        cprint(f'Sentiment: {stm}', text2color[stm])
                 
         print()
         
         
-def display_news(recent_news: pd.DataFrame):
-    st.divider()
+def st_display_news(recent_news: pd.DataFrame):
     for _, row in recent_news.iterrows():
         st.write('Time: ' + str(row.time))
         st.write('Link: ' + row.link)
@@ -104,6 +118,9 @@ def display_news(recent_news: pd.DataFrame):
         title = str(row.title).strip()
         if not isinstance(title, float) and len(title) > 0:
             st.write('Title: ' + title)
+            
+        stm = sentiment(row)
+        st.markdown(f'Sentiment: :{text2color[stm]}[{stm}]')
             
         st.divider()
     
