@@ -89,7 +89,7 @@ def display_wordcloud(df_recent, n=10):
     st.divider()
     
 
-def plt_display_news(df: pd.DataFrame):
+def display_news(df: pd.DataFrame):
     df.sort_values(by=['time'], ascending=False, inplace=True)
     
     for _, row in df.iterrows():
