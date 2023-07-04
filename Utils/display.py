@@ -105,7 +105,8 @@ def display_news(df: pd.DataFrame):
             continue
         
         stm = sentiment(row)
-        cprint(f'Sentiment: {stm}', text2color[stm])
+        # cprint(f'Sentiment: {stm}', text2color[stm])
+        print(f'Sentiment: {stm}')
                 
         print()
         
