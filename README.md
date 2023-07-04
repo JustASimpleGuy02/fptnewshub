@@ -23,10 +23,10 @@ Tải và giải nén thư mục ở [link](https://drive.google.com/file/d/1SNa
 ```
 $ streamlit run Main/index.py
 ```
-- Crawling tin tức mới nhất:
-    ```
-    $ python Main/crawl.py
-    ```
+Crawling tin tức mới nhất:
+```
+$ python Main/crawl.py
+```
 
 ## Labelling Text
 Code for Ubuntu, check the path when run in Windows
