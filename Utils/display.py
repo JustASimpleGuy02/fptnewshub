@@ -22,28 +22,13 @@ text2color = {
 def display_headings():
     st.set_page_config(page_title="FPT News Hub")
     st.title("Welcome to FPT News Hub 📈")
-    st.subheader("Created by Group 3 - DBP391 Project")
+    # st.subheader("Created by Group 3 - DBP391 Project")
+    st.write("**Created by Group 3 - DBP391 Project**")
     st.write("\n")
 
-def display_mention_statistics(data: dict):
-    # dictionary
-    data = dict(sorted(data.items()))
-    weeks, mentions = zip(*data.items())
-    weeks = list(map(prettify_week, weeks))
-    
-    # fig = plt.figure( figsize=(20,10))
-    fig = plt.figure( figsize=(12, 6))
 
-    plt.plot(weeks, mentions)
-    plt.title("Mentions Statistics")
-    
-    # plt.show()
-    st.pyplot(fig)
-    
-    st.divider()
-
-
-def display_mention_statistics_df(data: pd.DataFrame):
+def display_mention_statistics(data: pd.DataFrame):
+    st.subheader("Number of mentions by Week")
     data.sort_values(by="week", ascending=True, inplace=True, ignore_index=True)
     data["week"] = data["week"].apply(prettify_week)
             
@@ -58,7 +43,7 @@ def display_wordcloud(df_recent, n=10):
     """
     Display wordcloud of n recent news
     """
-    st.write("**Word Cloud**")
+    st.subheader("Word Cloud")
     
     # stopwords = open("Preprocess/stopword.txt", "r")
     stopwords = open("Preprocess/vietnamese-stopwords.txt", "r", encoding="UTF-8")
@@ -94,8 +79,7 @@ def display_wordcloud(df_recent, n=10):
     
     # plt.show()
     st.pyplot(fig)
-    st.divider()
-        
+    
 
 def display_news(df: pd.DataFrame):
     df.sort_values(by=["time"], ascending=False, inplace=True)
@@ -120,19 +104,36 @@ def display_news(df: pd.DataFrame):
         
         
 def st_display_news(recent_news: pd.DataFrame):
+    st.write("\n")
+    
+    st.subheader("**Recent News**")
+    st.divider()
+    
     for _, row in recent_news.iterrows():
-        st.write("Time: " + str(row.time))
-        st.write("Link: " + row.link)
+        st.write("**Time**: " + str(prettify_date(row.time)))
+        st.write("**Link**: " + row.link)
         
         title = str(row.title).strip()
         if not isinstance(title, float) and len(title) > 0:
-            st.write("Title: " + title)
+            st.write("**Title**: " + title)
             
         stm = sentiment(row)
-        st.markdown(f"Sentiment: :{text2color[stm]}[{stm}]")
+        st.markdown(f"**Sentiment**: :{text2color[stm]}[{stm}]")
             
         st.divider()
 
+def prettify_date(date: str):
+    """Change date to usual format: dd//mm/yyyy
+
+    Args:
+        date (str): input date
+
+    Returns:
+        date: the date changed to its format
+    """
+    # week = ['/'.join(w.split('-')[::-1]) for w in week.split('_')]
+    date = '/'.join(date.split('-'))
+    return date
 
 # Define the base time-series chart.
 def get_chart(data):
@@ -144,7 +145,7 @@ def get_chart(data):
     )
 
     lines = (
-        alt.Chart(data, title="Number of mentions by Week")
+        alt.Chart(data)
         .mark_line()
         .encode(
             x="week",

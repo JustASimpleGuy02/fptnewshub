@@ -6,12 +6,10 @@ def main():
     display_headings()
 
     # count number of articles by past n weeks, default n = 5
-    # recent_news, week2mentions = get_news_by_week()
-    recent_news, week2mentions = get_news_by_week_df()
+    recent_news, week2mentions = get_news_by_week()
 
     # display number of mentions in line graph by week
-    # display_mention_statistics(week2mentions)
-    display_mention_statistics_df(week2mentions)
+    display_mention_statistics(week2mentions)
 
     # display most recent news' word cloud
     display_wordcloud(recent_news)
