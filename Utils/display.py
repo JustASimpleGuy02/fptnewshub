@@ -68,10 +68,11 @@ def display_wordcloud(df_recent, n=10):
     plt.imshow(wordcloud)
     plt.title("Wordcloud")
     plt.axis("off")
-    plt.tight_layout(pad=0)
-    plt.savefig("/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png")
-    image = Image.open('/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png')
-    st.image(image, caption='Wordcloud')
+    st.pyplot()
+    # plt.tight_layout(pad=0)
+    # plt.savefig("/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png")
+    # image = Image.open('/home/dungmaster/Study/DBP391/Project/fptnewshub/Images/wordcloud.png')
+    # st.image(image, caption='Wordcloud')
     
 def print_news(df: pd.DataFrame, debug=False):
     df.sort_values(by=['time'], ascending=False, inplace=True)
