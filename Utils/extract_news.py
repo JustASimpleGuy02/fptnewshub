@@ -5,6 +5,7 @@ import pandas as pd
 from dateutil.parser import parse
 from icecream import ic
 from .utils import clean_df
+from typing import Tuple
 
 dir_name = 'Mentions_By_Week'
 mentions_dir = str(Path(__file__).parent.parent / dir_name)
@@ -18,11 +19,13 @@ def prettify_week(week: str):
     Returns:
         week: the week changed to its format
     """
-    week = ['/'.join(w.split('-')[::-1]) for w in week.split('_')]
+    # week = ['/'.join(w.split('-')[::-1]) for w in week.split('_')]
+    week = ['/'.join(w.split('-')) for w in week.split('_')]
     week = '-'.join(week)
     return week
 
-def get_news_by_week(past_n_week=5, n_recent=20):
+
+def get_news_by_week(past_n_week=5, n_recent=20) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Accumulate and sort by time al the articles from the most recent weeks 
 
     Args:
@@ -30,19 +33,18 @@ def get_news_by_week(past_n_week=5, n_recent=20):
 
     Returns:
         df_total: DataFrame which includes all the most recent articles
-        week2mention: dictionary which maps week to number of articles
+        week2mention: DataFrame which maps week to number of articles
     """    
     csv_files = glob(mentions_dir + '/*.csv')
     df_total = pd.DataFrame(columns=['link', 'time', 'title', 'text', 'sentiment'])
-    week2mention = {}
+    week2mention = pd.DataFrame(columns=["week", "mentions"])
     
     count = 0
     
     # read from each csv files of the past weeks
     for fpath in sorted(csv_files)[:-(past_n_week+1):-1]:  
         week = osp.basename(fpath).split('.')[0]
-        ic(week)
-        start_week, end_week = week.split('_')
+        start_week, _ = week.split('_')
         
         # read and preprocess
         df = pd.read_csv(fpath)
@@ -60,8 +62,7 @@ def get_news_by_week(past_n_week=5, n_recent=20):
         
         # accumulate the name and the 
         # number of mentions in each csv file
-        # week = prettify_week(week)
-        week2mention[week] = len(df)
+        week2mention.loc[len(week2mention.index)] = [week, len(df)]
     
     df_total.reset_index(drop=True, inplace=True)
     df_total.sort_values(by=['time'], ascending=False, inplace = True)

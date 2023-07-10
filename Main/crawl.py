@@ -17,7 +17,7 @@ def crawl(debug: bool = False):
         save_data(recent_news, current_week)
         
         if debug:
-            display_news(recent_news[:20].copy(), debug=debug)
+            display_news(recent_news[:20].copy())
             
         time.sleep(300)
 

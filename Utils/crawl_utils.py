@@ -129,9 +129,9 @@ def save_data(news: pd.DataFrame, week: str):
         old_df = pd.read_csv(out_path)
         old_df = old_df[old_df['time'].notna()]
         # old_df['time_parsed']= old_df['time'].apply(parse)
-        
+                
         # concat 2 dataframes and remove duplicates
-        news = pd.concat([old_df, news]).drop_duplicates()
+        news = pd.concat([old_df, news]).drop_duplicates(subset=["link"])
 
     # Sort all the news by time
     news.sort_values(by=['time'], ascending=False, inplace = True)    
