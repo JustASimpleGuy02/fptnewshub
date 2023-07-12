@@ -8,11 +8,15 @@ def main():
     # count number of articles by past n weeks, default n = 5
     recent_news, week2mentions = get_news_by_week()
 
-    # display number of mentions in line graph by week
-    display_mention_statistics(week2mentions)
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        # display number of mentions in line graph by week
+        display_mention_statistics(week2mentions)
 
-    # display most recent news' word cloud
-    display_wordcloud(recent_news)
+    with col2:
+        # display most recent news' word cloud
+        display_wordcloud(recent_news)
 
     # display details about news
     st_display_news(recent_news)

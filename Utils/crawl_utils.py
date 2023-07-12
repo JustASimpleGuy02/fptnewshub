@@ -12,8 +12,9 @@ from icecream import ic
 import pytz
 from .utils import clean_df
 from .extract_news import mentions_dir
+from datetime import timedelta
 
-# now = datetime.now(pytz.utc) - timedelta(days=7)
+# now = datetime.now(pytz.utc) - timedelta(days=1)
 now = datetime.now(pytz.utc) 
 domain_time_map = json.load(open("Crawler/domain_time_map.json"))
 

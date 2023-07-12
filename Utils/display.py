@@ -76,7 +76,7 @@ def display_wordcloud(df_recent, n=10):
     # plt.title("Wordcloud")
     plt.axis("off")
     plt.tight_layout(pad=0)
-    
+    # plt.savefig("Images/wordcloud.png")
     # plt.show()
     st.pyplot(fig)
     
