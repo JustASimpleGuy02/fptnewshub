@@ -25,7 +25,7 @@ def prettify_week(week: str):
     return week
 
 
-def get_news_by_week(past_n_week=4, n_recent=20) -> Tuple[pd.DataFrame, pd.DataFrame]:
+def get_news_by_week(past_n_week=4, n_recent=40) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Accumulate and sort by time al the articles from the most recent weeks 
 
     Args:

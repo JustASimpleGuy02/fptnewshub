@@ -15,12 +15,15 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 text2color = {
     "Positive": "green",
-    "Neutral": "orange",
+    "Neutral": "violet",
     "Negative": "red"
 }
 
 def display_headings():
-    st.set_page_config(page_title="FPT News Hub")
+    st.set_page_config(
+        page_title="FPT News Hub",
+        layout="wide"
+    )
     st.title("Welcome to FPT News Hub 📈")
     # st.subheader("Created by Group 3 - DBP391 Project")
     st.write("**Created by Group 3 - DBP391 Project**")
