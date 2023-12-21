@@ -20,7 +20,10 @@ text2color = {
 }
 
 def display_headings():
-    st.set_page_config(page_title="FPT News Hub")
+    st.set_page_config(
+        page_title="FPT News Hub",
+        layout="wide"
+    )
     st.title("Welcome to FPT News Hub 📈")
     # st.subheader("Created by Group 3 - DBP391 Project")
     st.write("**Created by Group 3 - DBP391 Project**")
@@ -76,7 +79,7 @@ def display_wordcloud(df_recent, n=10):
     # plt.title("Wordcloud")
     plt.axis("off")
     plt.tight_layout(pad=0)
-    
+    # plt.savefig("Images/wordcloud.png")
     # plt.show()
     st.pyplot(fig)
     

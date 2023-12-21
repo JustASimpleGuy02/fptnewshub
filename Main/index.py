@@ -26,9 +26,12 @@ def main():
     c1, c2, c3 = st.columns([1, 2, 1])
     with c2:
         st_display_news(recent_news)
+<<<<<<< HEAD
     
     
            
+=======
+>>>>>>> 8a917ba8207d407c7126314fa1327e407852e09f
         
 if __name__ == '__main__':
     main()
