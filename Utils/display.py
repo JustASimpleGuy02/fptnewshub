@@ -15,7 +15,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 text2color = {
     "Positive": "green",
-    "Neutral": "orange",
+    "Neutral": "violet",
     "Negative": "red"
 }
 
@@ -105,7 +105,6 @@ def display_news(df: pd.DataFrame):
         
 def st_display_news(recent_news: pd.DataFrame):
     st.write("\n")
-    
     st.subheader("**Recent News**")
     st.divider()
     

@@ -18,3 +18,4 @@ transformers
 torch==1.13.1
 ipywidgets
 altair
+streamlit_scrollable_textbox
