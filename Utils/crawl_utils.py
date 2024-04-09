@@ -100,7 +100,7 @@ def crawl_by_week(date: datetime):
         df.loc[len(df.index)] = [link, title, time, text, ""]
 
     # fill time of articles which have invalid time
-    df["time"].fillna(method="ffill", inplace=True)
+    df["time"] = df["time"].ffill()
     return df, week
 
 
