@@ -167,7 +167,7 @@ def tien_xu_li(text):
     print("3- tach tu tieng viet \n" + text)
     text = chuyen_chu_thuong(text)
     print("4- chuyen chu thuong \n" + text)
-    text = chuan_hoa_cau_2(text)
+    text = chuan_hoa_cau(text)
     print("5- chuan hoa cau \n" + text)
     text = bo_stopword(text)
     print("6- bo word \n" + text)
@@ -179,3 +179,4 @@ paragraph_test = (
 )
 
 output = tien_xu_li(paragraph_test)
+print(output)
