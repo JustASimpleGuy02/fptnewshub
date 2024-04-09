@@ -1,5 +1,14 @@
 # AI1602 - DBP391 PROJECT
 
+## Demo
+<p align="center">
+   <img src="Images/2024-04-09_17-23.png" />
+</p>
+
+<p align="center">
+   <img src="Images/2024-04-09_17-23_1.png" />
+</p>   
+
 ## Setup
 ```
 $ conda create -n dbp python=3.8

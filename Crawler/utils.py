@@ -1,20 +1,15 @@
 # return a list of news' link from a webpage
-def crawl_list_news(link, 
-                    tag = None, 
-                    attr = None, 
-                    domain = "",
-                    result_end = ""):
+def crawl_list_news(link, tag=None, attr=None, domain="", result_end=""):
     from bs4 import BeautifulSoup
     import requests
-    
+
     list_link = []
     headers = {
-         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
     }
-    response = requests.get(link, 
-                            headers=headers)
+    response = requests.get(link, headers=headers)
     # print(response.text)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, "html.parser")
     # print(soup)
     try:
         if tag:
@@ -22,7 +17,7 @@ def crawl_list_news(link,
         elif attr:
             if type(attr) == list:
                 for att in attr[:-1]:
-                    soup = soup.find(attrs = att)
+                    soup = soup.find(attrs=att)
                 article_list = soup.find_all(attrs=attr[-1])
             else:
                 article_list = soup.find_all(attrs=attr)
@@ -35,56 +30,65 @@ def crawl_list_news(link,
     for article in article_list:
         try:
             parent_tag = article.find("a", href=True)
-            href = parent_tag['href']
+            href = parent_tag["href"]
             # print(href)
-            if len(result_end) > 0 and not (domain + href).endswith(result_end):
+            if len(result_end) > 0 and not (domain + href).endswith(
+                result_end
+            ):
                 continue
             list_link.append(domain + href)
         except:
             continue
     return list(set(list_link))
 
-def crawl_list_news_gg(domain,
-                       page,
-                       result_end = ""):
+
+def crawl_list_news_gg(domain, page, result_end=""):
     from bs4 import BeautifulSoup
     import requests
-    
+
     list_link = []
     headers = {
-         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
     }
-    response = requests.get("https://www.google.com/search?q=đại+học+fpt+site:{}&num=100&start={}".format(domain, (page-1)*100), 
-                            headers=headers)
+    response = requests.get(
+        "https://www.google.com/search?q=đại+học+fpt+site:{}&num=100&start={}".format(
+            domain, (page - 1) * 100
+        ),
+        headers=headers,
+    )
     # print(response.text)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, "html.parser")
     article_list = soup.find_all(attrs="yuRUbf")
     for article in article_list:
         try:
             parent_tag = article.find("a", href=True)
-            href = parent_tag['href']
+            href = parent_tag["href"]
             # print(href)
-            if len(result_end) > 0 and not (domain + href).endswith(result_end):
+            if len(result_end) > 0 and not (domain + href).endswith(
+                result_end
+            ):
                 continue
             list_link.append(href)
         except:
             continue
     return list(set(list_link))
 
+
 # return text from a news page
-def crawl_news_text(link_news: str, domain_time_map: dict,
-                    language = "Vietnamese"):
+def crawl_news_text(
+    link_news: str, domain_time_map: dict, language="Vietnamese"
+):
     import requests
     import justext
     from bs4 import BeautifulSoup
     from htmldate import find_date
-    
+
     result = []
     headers = {
-         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
     }
     try:
-        response = requests.get(link_news, headers=headers, timeout=300)    
+        response = requests.get(link_news, headers=headers, timeout=300)
     except:
         return "", "", ""
     soup = BeautifulSoup(response.text, "html.parser")
@@ -127,10 +131,12 @@ def crawl_news_text(link_news: str, domain_time_map: dict,
     #                 time = ""
     #         break
     try:
-        paragraphs = justext.justext(response.content, justext.get_stoplist(language))
+        paragraphs = justext.justext(
+            response.content, justext.get_stoplist(language)
+        )
         for paragraph in paragraphs:
             if not paragraph.is_boilerplate:
                 result.append(paragraph.text)
     except:
         result = [""]
-    return title, time, '\n'.join(result)
+    return title, time, "\n".join(result)
