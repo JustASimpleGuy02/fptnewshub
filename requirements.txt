@@ -24,3 +24,4 @@ lxml[html_clean]
 pre-commit
 black
 isort
+mypy
